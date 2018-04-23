@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutBlock1.Text" xml:space="preserve">
+    <value>轻时光 采用了最新的 Fluent Design 设计语言，外观美观。可以记录下对于您来说有特殊意义的日子。由于开发者尚且是个高中生，对于软件开发的了解尚浅，很多地方考虑不足，欢迎大家提出建议。</value>
+  </data>
+  <data name="AboutBlock2.Text" xml:space="preserve">
+    <value>软件功能尚且简单，但是UI还是不能马虎的，希望大家能够喜欢这款软件。</value>
+  </data>
+  <data name="AddButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>添加事件</value>
+  </data>
+  <data name="AddConfirmButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddEventBox.PlaceholderText" xml:space="preserve">
+    <value>事件标题</value>
+  </data>
+  <data name="AddEventDate.Text" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="AddEventTitle.Text" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="AddPageBlock.Text" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>轻时光</value>
+  </data>
+  <data name="AutoDelSwitch.Header" xml:space="preserve">
+    <value>自动删除过期事件</value>
+  </data>
+  <data name="AutoDelSwitch.OffContent" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="AutoDelSwitch.OnContent" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="BackButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>返回主页</value>
+  </data>
+  <data name="BasicCombo.Content" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="basicEventsBlock.Text" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="birthdayBlock.Text" xml:space="preserve">
+    <value>生日</value>
+  </data>
+  <data name="BirthdayCombo.Content" xml:space="preserve">
+    <value>生日</value>
+  </data>
+  <data name="CancelButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CataBlock.Text" xml:space="preserve">
+    <value>分类</value>
+  </data>
+  <data name="CataBlock.Width" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="CataPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>选取分类</value>
+  </data>
+  <data name="CataPlaceholder.Width" xml:space="preserve">
+    <value>320</value>
+  </data>
+  <data name="CBGCusButton.Content" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="CBGErrorClose" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="CBGErrorContent" xml:space="preserve">
+    <value>请选择需要更换的背景图片</value>
+  </data>
+  <data name="CBGErrorTitle" xml:space="preserve">
+    <value>哎呀~出了点小问题！</value>
+  </data>
+  <data name="CBGSaveButton.Content" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="CEDelButton.Content" xml:space="preserve">
+    <value>删 除</value>
+  </data>
+  <data name="CEManagerInfo1" xml:space="preserve">
+    <value>封面事件不能为空</value>
+  </data>
+  <data name="CEManagerInfo2" xml:space="preserve">
+    <value>是否删除此事件？</value>
+  </data>
+  <data name="CEManagerInfo3" xml:space="preserve">
+    <value>请点选需要删除的事件</value>
+  </data>
+  <data name="ConfirmResetCoverButton.Content" xml:space="preserve">
+    <value>重 置</value>
+  </data>
+  <data name="ConfirmResetCoverButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>恢复到默认设置</value>
+  </data>
+  <data name="CoverBlock1.Text" xml:space="preserve">
+    <value>距离</value>
+  </data>
+  <data name="CoverEventsDel.ToolTipService.ToolTip" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="CoverTileSwitchHeader.Header" xml:space="preserve">
+    <value>将封面事件固定为磁贴</value>
+  </data>
+  <data name="CoverTileSwitchHeader.OffContent" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="CoverTileSwitchHeader.OnContent" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="DaysBlock.Text" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="DaysSelector1.Content" xml:space="preserve">
+    <value>过去</value>
+  </data>
+  <data name="DaysSelector2.Content" xml:space="preserve">
+    <value>将来</value>
+  </data>
+  <data name="DaysSelectorNote.Text" xml:space="preserve">
+    <value>可设定的日期为前后100年以内，如果天数超过最大范围，则日期选择器不会更新</value>
+  </data>
+  <data name="DefaultCoverTitle" xml:space="preserve">
+    <value>最重要的时刻</value>
+  </data>
+  <data name="DefaultTileBG.Text" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="EditPageBlock.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EditTileBGInfo.Text" xml:space="preserve">
+    <value>第一项默认背景为系统主题色</value>
+  </data>
+  <data name="EmailButton.Content" xml:space="preserve">
+    <value>开发者邮箱</value>
+  </data>
+  <data name="entertainmentBlock.Text" xml:space="preserve">
+    <value>娱乐</value>
+  </data>
+  <data name="EntertainmentCombo.Content" xml:space="preserve">
+    <value>娱乐</value>
+  </data>
+  <data name="festivalBlock.Text" xml:space="preserve">
+    <value>节日</value>
+  </data>
+  <data name="FestivalCombo.Content" xml:space="preserve">
+    <value>节日</value>
+  </data>
+  <data name="HotKey1.Text" xml:space="preserve">
+    <value>Ctrl+U：打开设置</value>
+  </data>
+  <data name="HotKey2.Text" xml:space="preserve">
+    <value>Ctrl+N：新建事件</value>
+  </data>
+  <data name="HotKey3.Text" xml:space="preserve">
+    <value>Escape：返回封面</value>
+  </data>
+  <data name="HotKey4.Text" xml:space="preserve">
+    <value>Ctrl+S：保存事件</value>
+  </data>
+  <data name="HotKey5.Text" xml:space="preserve">
+    <value>Ctrl+L：在Windows Hello启用的时候，快速锁定应用</value>
+  </data>
+  <data name="HotKey6.Text" xml:space="preserve">
+    <value>Ctrl+O：在Windows Hello启用的时候，快速解锁应用</value>
+  </data>
+  <data name="LangComboHeader.Header" xml:space="preserve">
+    <value>语言（Language）</value>
+  </data>
+  <data name="lifeBlock.Text" xml:space="preserve">
+    <value>生活</value>
+  </data>
+  <data name="LifeCombo.Content" xml:space="preserve">
+    <value>生活</value>
+  </data>
+  <data name="LockButton.Content" xml:space="preserve">
+    <value>锁定 轻时光</value>
+  </data>
+  <data name="LockButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>快捷键：Ctrl+L</value>
+  </data>
+  <data name="LogBlock.Text" xml:space="preserve">
+    <value>点击下面链接来查看相关更新日志</value>
+  </data>
+  <data name="LogHyper1.Content" xml:space="preserve">
+    <value>版本 1.1.0 - 1.7.0 更新日志</value>
+  </data>
+  <data name="loveBlock.Text" xml:space="preserve">
+    <value>爱情</value>
+  </data>
+  <data name="LoveCombo.Content" xml:space="preserve">
+    <value>爱情</value>
+  </data>
+  <data name="ManagerCEBlock.Text" xml:space="preserve">
+    <value>管理封面事件</value>
+  </data>
+  <data name="newCoverRadio1.Content" xml:space="preserve">
+    <value>添加为新的封面事件</value>
+  </data>
+  <data name="newCoverRadio2.Content" xml:space="preserve">
+    <value>替换已有的封面事件</value>
+  </data>
+  <data name="Note1.Text" xml:space="preserve">
+    <value>注：最多可以设置五个封面事件</value>
+  </data>
+  <data name="Note2.Text" xml:space="preserve">
+    <value>注：请在下面选中替换的封面事件</value>
+  </data>
+  <data name="otherBlock.Text" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="OtherCombo.Content" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="PivotHeader1.Header" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="PivotHeader2.Header" xml:space="preserve">
+    <value>设定</value>
+  </data>
+  <data name="PivotHeader3.Header" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="PivotHeader4.Header" xml:space="preserve">
+    <value>快捷键</value>
+  </data>
+  <data name="PivotHeader5.Header" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="Quote1.Text" xml:space="preserve">
+    <value>圣人不贵尺之璧，</value>
+  </data>
+  <data name="Quote2.Text" xml:space="preserve">
+    <value>而重寸之阴。</value>
+  </data>
+  <data name="QuoteAuthor.Text" xml:space="preserve">
+    <value>《淮南子》</value>
+  </data>
+  <data name="ResetCoverButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>重置封面</value>
+  </data>
+  <data name="ResetCoverTextBlock.Text" xml:space="preserve">
+    <value>是否重置封面事件？</value>
+  </data>
+  <data name="ReviewButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>评价与反馈</value>
+  </data>
+  <data name="SelectCBGBlock.Text" xml:space="preserve">
+    <value>选择主页背景图片：</value>
+  </data>
+  <data name="SetCoverSwitch.Text" xml:space="preserve">
+    <value>设为封面</value>
+  </data>
+  <data name="SetTileBGButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>修改磁贴背景</value>
+  </data>
+  <data name="SettingButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingHeader.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="StoreReviewButton.Content" xml:space="preserve">
+    <value>应用商店评价</value>
+  </data>
+  <data name="studyBlock.Text" xml:space="preserve">
+    <value>学习</value>
+  </data>
+  <data name="StudyCombo.Content" xml:space="preserve">
+    <value>学习</value>
+  </data>
+  <data name="Switch.OffContent" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="Switch.OnContent" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="TileBGSaveButton.Content" xml:space="preserve">
+    <value>保 存</value>
+  </data>
+  <data name="titleBar.Text" xml:space="preserve">
+    <value>轻时光</value>
+  </data>
+  <data name="WHError1" xml:space="preserve">
+    <value>暂时无法使用Windows Hello，请先在系统内配置Windows Hello</value>
+  </data>
+  <data name="WHError2" xml:space="preserve">
+    <value>您的设备不支持Windows Hello，或其配置有误，出现未知错误</value>
+  </data>
+  <data name="WHSwitch.OffContent" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="WHSwitch.OnContent" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="workBlock.Text" xml:space="preserve">
+    <value>工作</value>
+  </data>
+  <data name="WorkCombo.Content" xml:space="preserve">
+    <value>工作</value>
+  </data>
+  <data name="AddErrorClose" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="AddErrorContent" xml:space="preserve">
+    <value>信息好像还没有填写完整呀</value>
+  </data>
+  <data name="AddErrorContent2" xml:space="preserve">
+    <value>你好像忘了选择需要被替换的封面事件哟!</value>
+  </data>
+  <data name="AddErrorContent3" xml:space="preserve">
+    <value>请选择需要对封面事件进行的处理</value>
+  </data>
+  <data name="AddErrorTitle" xml:space="preserve">
+    <value>哎呀~出了点小问题！</value>
+  </data>
+  <data name="CEMaxError" xml:space="preserve">
+    <value>注：你的封面事件已经达到上限</value>
+  </data>
+  <data name="EditInfo1" xml:space="preserve">
+    <value>请选择以下编辑选项</value>
+  </data>
+  <data name="EditInfo2" xml:space="preserve">
+    <value>请点选需要编辑的事件</value>
+  </data>
+  <data name="TileBGInfo1" xml:space="preserve">
+    <value>请先打开封面事件磁贴功能</value>
+  </data>
+  <data name="TileBGInfo2" xml:space="preserve">
+    <value>第一项默认背景为系统主题色</value>
+  </data>
+  <data name="FutureTag" xml:space="preserve">
+    <value>[未发生]</value>
+  </data>
+  <data name="NowTag" xml:space="preserve">
+    <value>[今天]</value>
+  </data>
+  <data name="PastTag" xml:space="preserve">
+    <value>[已过去]</value>
+  </data>
+  <data name="Cover1" xml:space="preserve">
+    <value>封面一</value>
+  </data>
+  <data name="Cover2" xml:space="preserve">
+    <value>封面二</value>
+  </data>
+  <data name="Cover3" xml:space="preserve">
+    <value>封面三</value>
+  </data>
+  <data name="Cover4" xml:space="preserve">
+    <value>封面四</value>
+  </data>
+  <data name="Cover5" xml:space="preserve">
+    <value>封面五</value>
+  </data>
+  <data name="DelEventButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DelEventFlyout.Content" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="EditEventButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EditEventFlyout.Content" xml:space="preserve">
+    <value>编辑事件</value>
+  </data>
+  <data name="LangInfoClose" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="LangInfoContent" xml:space="preserve">
+    <value>本次的语言更改将在重启应用后生效</value>
+  </data>
+  <data name="LangInfoTitle" xml:space="preserve">
+    <value>语言重置提醒</value>
+  </data>
+  <data name="LogHyper2.Content" xml:space="preserve">
+    <value>版本 1.8.0 更新日志</value>
+  </data>
+  <data name="LogHyper3.Content" xml:space="preserve">
+    <value>版本 1.8.1 更新日志</value>
+  </data>
+  <data name="OpenNewView.Text" xml:space="preserve">
+    <value>在新的窗口打开</value>
+  </data>
+</root>

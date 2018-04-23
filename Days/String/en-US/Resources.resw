@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutBlock1.Text" xml:space="preserve">
+    <value>LightDays is designed with new Fluent Design System, having a gorgeous appearance. It can record the days that special to you. Since I'm still a high school student and just start the journey with UWP development, I may not consider thoroughly about the development. In this case, if you have any idea or suggestion, please let me know by email.</value>
+  </data>
+  <data name="AboutBlock2.Text" xml:space="preserve">
+    <value>The functionality of this app maybe pretty simple right now, but I do pay much attention on the UI. Anyway, hopes you love it! Thanks!</value>
+  </data>
+  <data name="AddButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddConfirmButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AddEventBox.PlaceholderText" xml:space="preserve">
+    <value>title of events</value>
+  </data>
+  <data name="AddEventDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="AddEventTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="AddPageBlock.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>LightDays</value>
+  </data>
+  <data name="AutoDelSwitch.Header" xml:space="preserve">
+    <value>Auto delete outdated events</value>
+  </data>
+  <data name="AutoDelSwitch.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="AutoDelSwitch.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="BackButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BasicCombo.Content" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="basicEventsBlock.Text" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="birthdayBlock.Text" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="BirthdayCombo.Content" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="CancelButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CataBlock.Text" xml:space="preserve">
+    <value>Catagory</value>
+  </data>
+  <data name="CataBlock.Width" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="CataPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Choose the catagory of your events</value>
+  </data>
+  <data name="CataPlaceholder.Width" xml:space="preserve">
+    <value>285</value>
+  </data>
+  <data name="CBGCusButton.Content" xml:space="preserve">
+    <value>Customize</value>
+  </data>
+  <data name="CBGErrorClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CBGErrorContent" xml:space="preserve">
+    <value>Please select the picture you want to change to</value>
+  </data>
+  <data name="CBGErrorTitle" xml:space="preserve">
+    <value>Oops~ Something goes wrong!</value>
+  </data>
+  <data name="CBGSaveButton.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CEDelButton.Content" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ConfirmResetCoverButton.Content" xml:space="preserve">
+    <value>RESET</value>
+  </data>
+  <data name="ConfirmResetCoverButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Reset to default</value>
+  </data>
+  <data name="CoverBlock1.Text" xml:space="preserve">
+    <value>DAYS FROM</value>
+  </data>
+  <data name="CoverEventsDel.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CoverTileSwitchHeader.Header" xml:space="preserve">
+    <value>Set cover events as adaptive tile</value>
+  </data>
+  <data name="CoverTileSwitchHeader.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="CoverTileSwitchHeader.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="DaysBlock.Text" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DaysSelector1.Content" xml:space="preserve">
+    <value>Past</value>
+  </data>
+  <data name="DaysSelector2.Content" xml:space="preserve">
+    <value>Future</value>
+  </data>
+  <data name="DaysSelectorNote.Text" xml:space="preserve">
+    <value>You can set the days range from 100 years in the past and 100 years in the future. Date selector won't update if out of range.</value>
+  </data>
+  <data name="DefaultCoverTitle" xml:space="preserve">
+    <value>An Important Day</value>
+  </data>
+  <data name="DefaultTileBG.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="EditPageBlock.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditTileBGInfo.Text" xml:space="preserve">
+    <value>First choice is according to system theme</value>
+  </data>
+  <data name="EmailButton.Content" xml:space="preserve">
+    <value>Developer's Email</value>
+  </data>
+  <data name="entertainmentBlock.Text" xml:space="preserve">
+    <value>Recreation</value>
+  </data>
+  <data name="EntertainmentCombo.Content" xml:space="preserve">
+    <value>Recreation</value>
+  </data>
+  <data name="festivalBlock.Text" xml:space="preserve">
+    <value>Festival</value>
+  </data>
+  <data name="FestivalCombo.Content" xml:space="preserve">
+    <value>Festival</value>
+  </data>
+  <data name="HotKey1.Text" xml:space="preserve">
+    <value>Ctrl+U: Open Settings</value>
+  </data>
+  <data name="HotKey2.Text" xml:space="preserve">
+    <value>Ctrl+N: Add Event</value>
+  </data>
+  <data name="HotKey3.Text" xml:space="preserve">
+    <value>Escape: Back To Cover</value>
+  </data>
+  <data name="HotKey4.Text" xml:space="preserve">
+    <value>Ctrl+S: Save Event</value>
+  </data>
+  <data name="HotKey5.Text" xml:space="preserve">
+    <value>Ctrl+L: Lock Down App, if Windows Hello option is On</value>
+  </data>
+  <data name="HotKey6.Text" xml:space="preserve">
+    <value>Ctrl+O: Unlock App, if Windows Hello option is On</value>
+  </data>
+  <data name="LangComboHeader.Header" xml:space="preserve">
+    <value>Language（语言）</value>
+  </data>
+  <data name="lifeBlock.Text" xml:space="preserve">
+    <value>Life</value>
+  </data>
+  <data name="LifeCombo.Content" xml:space="preserve">
+    <value>Life</value>
+  </data>
+  <data name="LockButton.Content" xml:space="preserve">
+    <value>Lock LightDays</value>
+  </data>
+  <data name="LockButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>HotKey: Ctrl+L</value>
+  </data>
+  <data name="LogBlock.Text" xml:space="preserve">
+    <value>Click links presented below to view the update log</value>
+  </data>
+  <data name="LogHyper1.Content" xml:space="preserve">
+    <value>Version 1.1.0 - 1.7.0 Update Log</value>
+  </data>
+  <data name="loveBlock.Text" xml:space="preserve">
+    <value>Love</value>
+  </data>
+  <data name="LoveCombo.Content" xml:space="preserve">
+    <value>Love</value>
+  </data>
+  <data name="ManagerCEBlock.Text" xml:space="preserve">
+    <value>Manager cover events</value>
+  </data>
+  <data name="newCoverRadio1.Content" xml:space="preserve">
+    <value>Set it as a new cover event</value>
+  </data>
+  <data name="newCoverRadio2.Content" xml:space="preserve">
+    <value>Swap the existed cover event</value>
+  </data>
+  <data name="Note1.Text" xml:space="preserve">
+    <value>Note: You can set 5 cover events at most</value>
+  </data>
+  <data name="Note2.Text" xml:space="preserve">
+    <value>Note: Please select the event you want to swap</value>
+  </data>
+  <data name="otherBlock.Text" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="OtherCombo.Content" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="PivotHeader1.Header" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="PivotHeader2.Header" xml:space="preserve">
+    <value>Preference</value>
+  </data>
+  <data name="PivotHeader3.Header" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="PivotHeader4.Header" xml:space="preserve">
+    <value>HotKeys</value>
+  </data>
+  <data name="PivotHeader5.Header" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Quote1.Text" xml:space="preserve">
+    <value>TIME IS THE LONGEST DISTANCE</value>
+  </data>
+  <data name="Quote2.Text" xml:space="preserve">
+    <value>BETWEEN TWO PLACES.</value>
+  </data>
+  <data name="QuoteAuthor.Text" xml:space="preserve">
+    <value>Tennessee Williams</value>
+  </data>
+  <data name="ResetCoverButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Reset Cover</value>
+  </data>
+  <data name="ResetCoverTextBlock.Text" xml:space="preserve">
+    <value>Do you want to reset cover?</value>
+  </data>
+  <data name="ReviewButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Review &amp; Feedback</value>
+  </data>
+  <data name="SelectCBGBlock.Text" xml:space="preserve">
+    <value>Choose background picture</value>
+  </data>
+  <data name="SetCoverSwitch.Text" xml:space="preserve">
+    <value>Set it as cover event</value>
+  </data>
+  <data name="SetTileBGButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Edit tiles' background</value>
+  </data>
+  <data name="SettingButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingHeader.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="StoreReviewButton.Content" xml:space="preserve">
+    <value>Review in Store</value>
+  </data>
+  <data name="studyBlock.Text" xml:space="preserve">
+    <value>Study</value>
+  </data>
+  <data name="StudyCombo.Content" xml:space="preserve">
+    <value>Study</value>
+  </data>
+  <data name="Switch.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Switch.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="TileBGSaveButton.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="titleBar.Text" xml:space="preserve">
+    <value>LightDays</value>
+  </data>
+  <data name="WHSwitch.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="WHSwitch.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="workBlock.Text" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="WorkCombo.Content" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="CEManagerInfo1" xml:space="preserve">
+    <value>Cover event cannot be empty</value>
+  </data>
+  <data name="CEManagerInfo2" xml:space="preserve">
+    <value>Do you want to delete it?</value>
+  </data>
+  <data name="CEManagerInfo3" xml:space="preserve">
+    <value>Please select the event you want to delete</value>
+  </data>
+  <data name="WHError1" xml:space="preserve">
+    <value>You cannot use Windows Hello currently, please set up Windows Hello in system settings first</value>
+  </data>
+  <data name="WHError2" xml:space="preserve">
+    <value>Your device don't support for Windows Hello, or there's unknown error.</value>
+  </data>
+  <data name="AddErrorClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="AddErrorContent" xml:space="preserve">
+    <value>Seems like you haven't fill up the required information</value>
+  </data>
+  <data name="AddErrorContent2" xml:space="preserve">
+    <value>You seems forget about selecting the cover event you want to swap!</value>
+  </data>
+  <data name="AddErrorContent3" xml:space="preserve">
+    <value>Please select the action you want to do to cover events first</value>
+  </data>
+  <data name="AddErrorTitle" xml:space="preserve">
+    <value>Oops~ Something goes wrong!</value>
+  </data>
+  <data name="CEMaxError" xml:space="preserve">
+    <value>Note: The number of your cover events have reach the max</value>
+  </data>
+  <data name="EditInfo1" xml:space="preserve">
+    <value>Please select the option</value>
+  </data>
+  <data name="EditInfo2" xml:space="preserve">
+    <value>Please select the event you want to edit</value>
+  </data>
+  <data name="TileBGInfo1" xml:space="preserve">
+    <value>Turn on cover events as adaptive tile option first</value>
+  </data>
+  <data name="TileBGInfo2" xml:space="preserve">
+    <value>The default option is according to system theme</value>
+  </data>
+  <data name="FutureTag" xml:space="preserve">
+    <value>[Future]</value>
+  </data>
+  <data name="NowTag" xml:space="preserve">
+    <value>[Today]</value>
+  </data>
+  <data name="PastTag" xml:space="preserve">
+    <value>[Past]</value>
+  </data>
+  <data name="Cover1" xml:space="preserve">
+    <value>1st Cover</value>
+  </data>
+  <data name="Cover2" xml:space="preserve">
+    <value>2nd Cover</value>
+  </data>
+  <data name="Cover3" xml:space="preserve">
+    <value>3rd Cover</value>
+  </data>
+  <data name="Cover4" xml:space="preserve">
+    <value>4th Cover</value>
+  </data>
+  <data name="Cover5" xml:space="preserve">
+    <value>5th Cover</value>
+  </data>
+  <data name="DelEventButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DelEventFlyout.Content" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditEventButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditEventFlyout.Content" xml:space="preserve">
+    <value>Edit Event</value>
+  </data>
+  <data name="LangInfoClose" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="LangInfoContent" xml:space="preserve">
+    <value>The change of language will be activated after restarting app </value>
+  </data>
+  <data name="LangInfoTitle" xml:space="preserve">
+    <value>Note for changing language</value>
+  </data>
+  <data name="LogHyper2.Content" xml:space="preserve">
+    <value>Version 1.8.0 Update Log</value>
+  </data>
+  <data name="LogHyper3.Content" xml:space="preserve">
+    <value>Version 1.8.1 Update Log</value>
+  </data>
+  <data name="OpenNewView.Text" xml:space="preserve">
+    <value>Open in the new Window</value>
+  </data>
+</root>

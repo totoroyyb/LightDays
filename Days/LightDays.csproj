@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{00EA4D63-202E-4777-880A-FF3F5B470265}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Days</RootNamespace>
+    <AssemblyName>Days</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>Days_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\Users\yanyi\Desktop\APP\</AppxPackageDir>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>9E8B56F4DDE0BCC458781F7292ADF9C448C37432</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="addPage.xaml.cs">
+      <DependentUpon>addPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="basicEvent.xaml.cs">
+      <DependentUpon>basicEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="birthday.xaml.cs">
+      <DependentUpon>birthday.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="checkPassword.xaml.cs">
+      <DependentUpon>checkPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Constant\FoldIndexConstants.cs" />
+    <Compile Include="coverPage.xaml.cs">
+      <DependentUpon>coverPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage.xaml.cs">
+      <DependentUpon>EditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="entertainment.xaml.cs">
+      <DependentUpon>entertainment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="festival.xaml.cs">
+      <DependentUpon>festival.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="foldPage.xaml.cs">
+      <DependentUpon>foldPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="life.xaml.cs">
+      <DependentUpon>life.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="love.xaml.cs">
+      <DependentUpon>love.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoDelete.cs" />
+    <Compile Include="Model\CBG.cs" />
+    <Compile Include="Model\CoverEvents.cs" />
+    <Compile Include="Model\CustomizedCBG.cs" />
+    <Compile Include="Model\EditedEvent.cs" />
+    <Compile Include="Model\Events.cs" />
+    <Compile Include="Model\MinWinSize.cs" />
+    <Compile Include="Model\NewView.cs" />
+    <Compile Include="Model\ObjectSerializer.cs" />
+    <Compile Include="Model\Password.cs" />
+    <Compile Include="Model\SelectedEvent.cs" />
+    <Compile Include="Model\SelectedEventIndex.cs" />
+    <Compile Include="Model\SelectedFold.cs" />
+    <Compile Include="Model\Tile.cs" />
+    <Compile Include="Model\Translation.cs" />
+    <Compile Include="NewViewData.xaml.cs">
+      <DependentUpon>NewViewData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="others.xaml.cs">
+      <DependentUpon>others.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondaryView.xaml.cs">
+      <DependentUpon>SecondaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="settingPage.xaml.cs">
+      <DependentUpon>settingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="study.xaml.cs">
+      <DependentUpon>study.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="work.xaml.cs">
+      <DependentUpon>work.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Days_StoreKey.pfx" />
+    <None Include="Days_TemporaryKey.pfx" />
+    <PRIResource Include="String\zh-CN\Resources.resw" />
+    <PRIResource Include="String\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AliPay.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\CoverBG\CBG4.jpg" />
+    <Content Include="Assets\CoverBG\CBG5.jpg" />
+    <Content Include="Assets\CoverBG\CBG6.jpg" />
+    <Content Include="Assets\CoverBG\CBG8.jpg" />
+    <Content Include="Assets\CoverBG\CBG7.jpg" />
+    <Content Include="Assets\CoverBG\CBG9.jpg" />
+    <Content Include="Assets\CoverBG\CBG2.jpg" />
+    <Content Include="Assets\CoverBG\CBG10.jpg" />
+    <Content Include="Assets\CoverBG\CBG11.jpg" />
+    <Content Include="Assets\CoverBG\CBG3.jpg" />
+    <Content Include="Assets\CoverBG\CBG12.jpg" />
+    <Content Include="Assets\CoverBG\CBG13.jpg" />
+    <Content Include="Assets\CoverBG\CBG14.jpg" />
+    <Content Include="Assets\CoverBG\CBG1.jpg" />
+    <Content Include="Assets\CoverBG\CBG15.jpg" />
+    <Content Include="Assets\CoverBG\CBG16.jpg" />
+    <Content Include="Assets\CoverBG\CBG17.jpg" />
+    <Content Include="Assets\CoverBG\CBG18.jpg" />
+    <Content Include="Assets\CoverBG\CBG19.jpg" />
+    <Content Include="Assets\CoverBG\CBG22.jpg" />
+    <Content Include="Assets\CoverBG\CBG23.jpg" />
+    <Content Include="Assets\CoverBG\CBG24.jpg" />
+    <Content Include="Assets\CoverBG\CBG25.jpg" />
+    <Content Include="Assets\CoverBG\CBG26.jpg" />
+    <Content Include="Assets\dog.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\LightDaysIcon.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\TileBG\TileBG1.jpg" />
+    <Content Include="Assets\TileBG\TileBG10.jpg" />
+    <Content Include="Assets\TileBG\TileBG11.jpg" />
+    <Content Include="Assets\TileBG\TileBG12.jpg" />
+    <Content Include="Assets\TileBG\TileBG13.jpg" />
+    <Content Include="Assets\TileBG\TileBG14.jpg" />
+    <Content Include="Assets\TileBG\TileBG15.jpg" />
+    <Content Include="Assets\TileBG\TileBG16.jpg" />
+    <Content Include="Assets\TileBG\TileBG17.jpg" />
+    <Content Include="Assets\TileBG\TileBG18.jpg" />
+    <Content Include="Assets\TileBG\TileBG19.jpg" />
+    <Content Include="Assets\TileBG\TileBG2.jpg" />
+    <Content Include="Assets\TileBG\TileBG20.jpg" />
+    <Content Include="Assets\TileBG\TileBG21.jpg" />
+    <Content Include="Assets\TileBG\TileBG22.jpg" />
+    <Content Include="Assets\TileBG\TileBG23.jpg" />
+    <Content Include="Assets\TileBG\TileBG24.jpg" />
+    <Content Include="Assets\TileBG\TileBG25.jpg" />
+    <Content Include="Assets\TileBG\TileBG26.jpg" />
+    <Content Include="Assets\TileBG\TileBG27.jpg" />
+    <Content Include="Assets\TileBG\TileBG28.jpg" />
+    <Content Include="Assets\TileBG\TileBG29.jpg" />
+    <Content Include="Assets\TileBG\TileBG3.jpg" />
+    <Content Include="Assets\TileBG\TileBG30.jpg" />
+    <Content Include="Assets\TileBG\TileBG31.jpg" />
+    <Content Include="Assets\TileBG\TileBG32.jpg" />
+    <Content Include="Assets\TileBG\TileBG33.jpg" />
+    <Content Include="Assets\TileBG\TileBG4.jpg" />
+    <Content Include="Assets\TileBG\TileBG5.jpg" />
+    <Content Include="Assets\TileBG\TileBG6.jpg" />
+    <Content Include="Assets\TileBG\TileBG7.jpg" />
+    <Content Include="Assets\TileBG\TileBG8.jpg" />
+    <Content Include="Assets\TileBG\TileBG9.jpg" />
+    <Content Include="Assets\WeChatPayQR.jpg" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="UpdateInfo\UpdateLog.txt" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="addPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="basicEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="birthday.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="checkPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="coverPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="entertainment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="festival.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="foldPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="life.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="love.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewViewData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="others.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecondaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="settingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="study.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="work.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.7</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Services.Store.Engagement, Version=10.0">
+      <Name>Microsoft Engagement Framework</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

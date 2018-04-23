@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="Days.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Days"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Frame Name="MainPageFrame" KeyDown="MainPageFrame_KeyDown">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup >
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="880"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="coverFrame.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="coverFrame.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="shadowHost.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="shadowHost.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="shadowTarget.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="shadowTarget.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="CBGImage.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="CBGImage.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="foldFrame.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="foldFrame.(Grid.Column)" Value="1"/>
+                        <Setter Target="foldFrame.(Grid.Row)" Value="0"/>
+                        <Setter Target="foldFrame.(Grid.RowSpan)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+               Name="foldFrame">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition/>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+
+                <Canvas Name="shadowHost" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Canvas>
+                <Rectangle Name="shadowTarget" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="White"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <Image Stretch="UniformToFill" Name="CBGImage"
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               x:Name="coverFrame" x:FieldModifier="Public">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition/>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+            </Grid>
+
+            <Grid Grid.Row="0" Name="MenuGrid">
+                <Grid.Background>
+                    <AcrylicBrush BackgroundSource="HostBackdrop"
+                              TintColor="White"
+                              TintOpacity="0.4"/>
+                </Grid.Background>
+
+                <TextBlock x:Uid="titleBar" FontSize="14" Height="32" FontWeight="Bold"
+                   Style="{StaticResource CaptionTextBlockStyle}"
+                   HorizontalAlignment="Left" Padding="10,6,0,0">
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Frame>
+</Page>
