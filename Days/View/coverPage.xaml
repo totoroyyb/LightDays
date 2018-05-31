@@ -1,0 +1,122 @@
+﻿<Page
+    x:Class="Days.coverPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Days"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Days.Model"
+    mc:Ignorable="d" ManipulationMode="Rotate" Unloaded="Page_Unloaded">
+
+    <Frame Name="coverPageFrame" x:FieldModifier="public">
+        <Frame.ContentTransitions>
+            <TransitionCollection>
+                <NavigationThemeTransition/>
+            </TransitionCollection>
+        </Frame.ContentTransitions>
+
+        <Grid Background="Transparent">
+            
+            <Button Content="&#xE713;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Height="50" Width="50" FontSize="20" Background="Transparent"
+                Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                Click="Button_Click" x:Uid="SettingButton">
+            </Button>
+
+            <Button Content="&#xE710;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Height="50" Width="50" FontSize="20" Background="Transparent"
+                Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                Click="Button_Click_1" x:Uid="AddButton">
+            </Button>
+
+            <Button Content="&#xECC5;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                Height="50" Width="50" FontSize="20" Background="Transparent"
+                Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                x:Uid="ResetCoverButton">
+
+                <Button.Flyout>
+                    <Flyout x:Name="ResetCoverEventFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Uid="ResetCoverTextBlock" TextWrapping="Wrap" HorizontalAlignment="Center"
+                                       Grid.Row="0" Margin="5,5,5,5"/>
+
+                            <Button x:Uid="ConfirmResetCoverButton" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}"
+                                    BorderThickness="1" Click="Button_Click_2" HorizontalAlignment="Stretch"
+                                    Background="LightSkyBlue" Margin="5,5,5,5"/>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+
+            <Button x:Uid="ReviewButton" Content="&#xE19F;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Height="50" Width="50" FontSize="20" Background="Transparent"
+                Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                >
+
+                <Button.Flyout>
+                    <Flyout x:Name="FeedbackFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Button x:Uid="StoreReviewButton" Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                                    Grid.Row="0" HorizontalAlignment="Stretch" Click="Button_Click_3"
+                                    Margin="5,5,5,5" Background="LightSkyBlue"/>
+
+                            <Button x:Uid="EmailButton" Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
+                                    Grid.Row="1" HorizontalAlignment="Stretch" Click="Button_Click_4"
+                                    Margin="5,5,5,5" Background="LightSkyBlue"/>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+
+
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300">
+                <Grid.Background>
+                    <AcrylicBrush BackgroundSource="Backdrop"
+                               TintColor="White"
+                               TintOpacity="0.3"
+                              FallbackColor="White"/>
+                </Grid.Background>
+
+                <Pivot ItemsSource="{x:Bind CoverEventsCollection}" Name="CoverEventsPivot">
+                    <Pivot.HeaderTemplate>
+                        <DataTemplate x:DataType="model:CoverEvents">
+                            <TextBlock Text="{x:Bind header}" FontSize="17" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </Pivot.HeaderTemplate>
+
+                    <Pivot.ItemTemplate>
+                        <DataTemplate x:DataType="model:CoverEvents">
+                            <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center">
+                                <StackPanel>
+                                    <TextBlock x:Uid="CoverBlock1" FontSize="18" HorizontalAlignment="Center" Margin="10,5,10,5"/>
+
+                                    <TextBlock Text="{x:Bind title, Mode=OneWay}" FontSize="20" HorizontalAlignment="Center" Margin="10,10,10,5"
+                                        TextWrapping="Wrap" TextAlignment="Center" Name="titleBlock" x:FieldModifier="public"/>
+
+                                    <TextBlock Text="{x:Bind days.Days, Mode=OneWay}" FontSize="45" HorizontalAlignment="Center" 
+                                   FontWeight="Bold" Margin="10,0,10,5" Name="daysBlock" x:FieldModifier="public"/>
+
+                                    <TextBlock Text="{x:Bind date.ToShortDateString(), Mode=OneWay}" FontSize="20" HorizontalAlignment="Center" 
+                                   Margin="10,5,10,5" Name="dateBlock" x:FieldModifier="public"/>
+
+                                    <TextBlock Text="{x:Bind check, Mode=OneWay}" FontSize="17" HorizontalAlignment="Center" Margin="10,5,10,30"
+                                   Name="checkBlock" x:FieldModifier="public"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </DataTemplate>
+                    </Pivot.ItemTemplate>
+                </Pivot>
+            </Grid>
+        </Grid>
+    </Frame>
+</Page>

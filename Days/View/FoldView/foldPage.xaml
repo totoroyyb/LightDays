@@ -1,0 +1,138 @@
+﻿<Page
+    x:Class="Days.foldPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Days"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Unloaded="Page_Unloaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Name="eventFrame" Grid.Column="1">
+            <Frame.ContentTransitions>
+                <TransitionCollection>
+                    <NavigationThemeTransition/>
+                </TransitionCollection>
+            </Frame.ContentTransitions>
+
+            <Frame.Background>
+                <AcrylicBrush BackgroundSource="HostBackdrop"
+                              TintColor="White"
+                              TintOpacity="0.5"
+                              FallbackColor="GhostWhite"/>
+            </Frame.Background>
+
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="18" FontWeight="Light"
+                           HorizontalAlignment="Right" TextWrapping="Wrap" x:Uid="Quote1"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Right" TextWrapping="Wrap"
+                           FontSize="18" FontWeight="Light" x:Uid="Quote2"/>
+                <TextBlock Grid.Row="2"/>
+                <TextBlock HorizontalAlignment="Right" Grid.Row="3" FontWeight="Light"
+                           TextWrapping="Wrap" x:Uid="QuoteAuthor"/>
+            </Grid>
+        </Frame>
+
+        <Canvas Name="shadowHost" Grid.Column="0"></Canvas>
+        <Rectangle Name="shadowTarget" Grid.Column="0">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="WhiteSmoke"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <ListView Name="foldListView" Grid.Column="0" SelectionChanged="foldListView_SelectionChanged"
+                  SelectionMode="Single">
+            <ListView.Background>
+                <AcrylicBrush BackgroundSource="HostBackdrop"
+                              TintColor="White" 
+                              TintOpacity="0.6"
+                              FallbackColor="WhiteSmoke"/>
+            </ListView.Background>
+      
+            <ListViewItem Name="basicEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE787;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="basicEventsBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="lifeEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE913;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="lifeBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="loveEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE006;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="loveBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="birthdayEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE11D;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="birthdayBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="festivalEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xED55;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="festivalBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="entertainmentEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xED56;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="entertainmentBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="studyEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xEB3C;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="studyBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="workEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xEADF;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="workBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Name="otherEvents">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                               VerticalAlignment="Center" Margin="2,12,5,10"/>
+                    <TextBlock x:Uid="otherBlock" FontSize="20" Margin="10,8,10,10"/>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+
+        
+    </Grid>
+</Page>

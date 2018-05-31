@@ -11,7 +11,7 @@
     <AssemblyName>Days</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -97,46 +97,47 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="addPage.xaml.cs">
+    <Compile Include="View\addPage.xaml.cs">
       <DependentUpon>addPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="basicEvent.xaml.cs">
+    <Compile Include="View\FoldView\basicEvent.xaml.cs">
       <DependentUpon>basicEvent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="birthday.xaml.cs">
+    <Compile Include="View\FoldView\birthday.xaml.cs">
       <DependentUpon>birthday.xaml</DependentUpon>
     </Compile>
-    <Compile Include="checkPassword.xaml.cs">
+    <Compile Include="View\PasswordView\checkPassword.xaml.cs">
       <DependentUpon>checkPassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constant\FoldIndexConstants.cs" />
-    <Compile Include="coverPage.xaml.cs">
+    <Compile Include="View\coverPage.xaml.cs">
       <DependentUpon>coverPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditPage.xaml.cs">
+    <Compile Include="View\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="entertainment.xaml.cs">
+    <Compile Include="View\FoldView\entertainment.xaml.cs">
       <DependentUpon>entertainment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="festival.xaml.cs">
+    <Compile Include="View\FoldView\festival.xaml.cs">
       <DependentUpon>festival.xaml</DependentUpon>
     </Compile>
-    <Compile Include="foldPage.xaml.cs">
+    <Compile Include="View\FoldView\foldPage.xaml.cs">
       <DependentUpon>foldPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="life.xaml.cs">
+    <Compile Include="View\FoldView\life.xaml.cs">
       <DependentUpon>life.xaml</DependentUpon>
     </Compile>
-    <Compile Include="love.xaml.cs">
+    <Compile Include="View\FoldView\love.xaml.cs">
       <DependentUpon>love.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\MemoryCleaner.cs" />
     <Compile Include="Model\AutoDelete.cs" />
     <Compile Include="Model\CBG.cs" />
     <Compile Include="Model\CoverEvents.cs" />
@@ -155,20 +156,20 @@
     <Compile Include="NewViewData.xaml.cs">
       <DependentUpon>NewViewData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="others.xaml.cs">
+    <Compile Include="View\FoldView\others.xaml.cs">
       <DependentUpon>others.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecondaryView.xaml.cs">
       <DependentUpon>SecondaryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="settingPage.xaml.cs">
+    <Compile Include="View\settingPage.xaml.cs">
       <DependentUpon>settingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="study.xaml.cs">
+    <Compile Include="View\FoldView\study.xaml.cs">
       <DependentUpon>study.xaml</DependentUpon>
     </Compile>
-    <Compile Include="work.xaml.cs">
+    <Compile Include="View\FoldView\work.xaml.cs">
       <DependentUpon>work.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -303,51 +304,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="addPage.xaml">
+    <Page Include="View\addPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="basicEvent.xaml">
+    <Page Include="View\FoldView\basicEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="birthday.xaml">
+    <Page Include="View\FoldView\birthday.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="checkPassword.xaml">
+    <Page Include="View\PasswordView\checkPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="coverPage.xaml">
+    <Page Include="View\coverPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditPage.xaml">
+    <Page Include="View\EditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="entertainment.xaml">
+    <Page Include="View\FoldView\entertainment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="festival.xaml">
+    <Page Include="View\FoldView\festival.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="foldPage.xaml">
+    <Page Include="View\FoldView\foldPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="life.xaml">
+    <Page Include="View\FoldView\life.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="love.xaml">
+    <Page Include="View\FoldView\love.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -355,7 +356,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="others.xaml">
+    <Page Include="View\FoldView\others.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -363,15 +364,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="settingPage.xaml">
+    <Page Include="View\settingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="study.xaml">
+    <Page Include="View\FoldView\study.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="work.xaml">
+    <Page Include="View\FoldView\work.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
