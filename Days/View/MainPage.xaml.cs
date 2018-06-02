@@ -5,7 +5,6 @@ using System.Numerics;
 using Windows.System;
 using Windows.UI;
 using Windows.UI.Composition;
-using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
@@ -104,31 +103,6 @@ namespace Days
             this.Frame.Navigate(typeof(checkPassword));
         }
 
-        private void MainPageFrame_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            if (IsCtrlKeyPressed())
-            {
-                if (e.Key == VirtualKey.L && Password.winHelloStatus)
-                {
-                    this.Frame.Navigate(typeof(checkPassword));
-                }
-                else if (e.Key == VirtualKey.N)
-                {
-                    coverFrame.Navigate(typeof(addPage));
-                }
-                else if (e.Key == VirtualKey.U)
-                {
-                    coverFrame.Navigate(typeof(settingPage));
-                }
-            }
-        }
-
-        private static bool IsCtrlKeyPressed()
-        {
-            var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
-            return (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
-        }
-
         private void SetCoverImage(object source, EventArgs e)
         {
             string newImageUri = "ms-appx:///" + CBGManager.Source.CoverSource;
@@ -140,6 +114,25 @@ namespace Days
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             RegisterEventHandlers();
+            AddKeyAccelerator();
+        }
+
+        private void AddKeyAccelerator()
+        {
+            KeyboardAccelerator lockDown = new KeyboardAccelerator();
+            lockDown.Key = VirtualKey.L;
+            lockDown.Modifiers = VirtualKeyModifiers.Control;
+            lockDown.Invoked += LockDown_Invoked;
+            this.KeyboardAccelerators.Add(lockDown);
+        }
+
+        private void LockDown_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            if (Password.winHelloStatus)
+            {
+                this.Frame.Navigate(typeof(checkPassword));
+            }
+            args.Handled = true;
         }
 
         private void RegisterEventHandlers()
@@ -159,8 +152,13 @@ namespace Days
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             DeregisterEventHandlers();
-            
+            //ClearKeyboardAccelerator();
             MemoryCleaner.FreeUpMemory();
+        }
+
+        private void ClearKeyboardAccelerator()
+        {
+            this.KeyboardAccelerators.Clear();
         }
 
         private void DeregisterEventHandlers()

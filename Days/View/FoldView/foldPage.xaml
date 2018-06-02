@@ -62,73 +62,73 @@
       
             <ListViewItem Name="basicEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xE787;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xE787;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="basicEventsBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="basicEventsBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="lifeEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xE913;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xE913;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="lifeBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="lifeBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="loveEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xE006;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xE006;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="loveBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="loveBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="birthdayEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xE11D;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xE11D;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="birthdayBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="birthdayBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="festivalEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xED55;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xED55;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="festivalBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="festivalBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="entertainmentEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xED56;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xED56;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="entertainmentBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="entertainmentBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="studyEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xEB3C;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xEB3C;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="studyBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="studyBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="workEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xEADF;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xEADF;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="workBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="workBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
 
             <ListViewItem Name="otherEvents">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                    <TextBlock Text="&#xF0E2;" FontFamily="Segoe MDL2 Assets" FontSize="18"
                                VerticalAlignment="Center" Margin="2,12,5,10"/>
-                    <TextBlock x:Uid="otherBlock" FontSize="20" Margin="10,8,10,10"/>
+                    <TextBlock x:Uid="otherBlock" FontSize="18" Margin="10,8,10,10"/>
                 </StackPanel>
             </ListViewItem>
         </ListView>

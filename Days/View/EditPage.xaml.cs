@@ -370,28 +370,6 @@ namespace Days
             swapCoverEventListView.IsEnabled = false;
         }
 
-        private void editPageFrame_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            if (IsCtrlKeyPressed())
-            {
-                if (e.Key == VirtualKey.S)
-                {
-                    Button_Click_1(sender, null);
-                }
-            }
-
-            if (e.Key == VirtualKey.Escape)
-            {
-                this.Frame.Navigate(typeof(coverPage));
-            }
-        }
-
-        private static bool IsCtrlKeyPressed()
-        {
-            var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
-            return (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
-        }
-
         private void daysTextBox_BeforeTextChanging(TextBox sender, TextBoxBeforeTextChangingEventArgs args)
         {
             if (checkInit)
@@ -570,6 +548,18 @@ namespace Days
             {
                 MemoryCleaner.FreeUpMemory();
             }
+        }
+
+        private void GoBack_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(coverPage));
+            args.Handled = true;
+        }
+
+        private void SaveEvent_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            Button_Click_1(sender, null);
+            args.Handled = true;
         }
     }
 }

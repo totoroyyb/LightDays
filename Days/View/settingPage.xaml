@@ -8,487 +8,483 @@
     xmlns:model="using:Days.Model"
     mc:Ignorable="d" Unloaded="Page_Unloaded">
 
-
-    <Frame Name="settingPageFrame" KeyDown="settingPageFrame_KeyDown">
-        <Frame.ContentTransitions>
-            <TransitionCollection>
-                <NavigationThemeTransition/>
-            </TransitionCollection>
-        </Frame.ContentTransitions>
-
-        <Grid>
-            <Grid.Background>
-                <AcrylicBrush TintColor="White"
+    <Grid>
+        <Grid.Background>
+            <AcrylicBrush TintColor="White"
                               TintOpacity="0.7"
                               BackgroundSource="Backdrop"
                               FallbackColor="White"/>
-            </Grid.Background>
+        </Grid.Background>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <Button Content="&#xE72B;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Top"
+        <Button Content="&#xE72B;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="50" Width="50" FontSize="20" Background="Transparent"
                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1" x:Uid="BackButton"
-                Click="Button_Click" Grid.Row="0"/>
+                Click="Button_Click" Grid.Row="0">
 
-            <TextBlock x:Uid="SettingHeader" FontSize="25" FontWeight="Bold" Height="50" HorizontalAlignment="Center"
+            <Button.KeyboardAccelerators>
+                <KeyboardAccelerator x:Name="GoBack" Key="Escape" Invoked="GoBack_Invoked"/>
+            </Button.KeyboardAccelerators>
+        </Button>
+
+        <TextBlock x:Uid="SettingHeader" FontSize="25" FontWeight="Bold" Height="50" HorizontalAlignment="Center"
                        Grid.Row="0" Margin="0,10,0,0"/>
 
-            <Pivot Grid.Row="1" Margin="0,-10,0,0">
-                <PivotItem x:Uid="PivotHeader1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+        <Pivot Grid.Row="1" Margin="0,-10,0,0">
+            <PivotItem x:Uid="PivotHeader1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Margin="5,10,5,10" Grid.Row="0">
-                            <TextBlock x:Uid="SelectCBGBlock" VerticalAlignment="Center" FontSize="17"/>
-                            <Button x:Uid="CBGSaveButton" Click="Button_Click_1" Margin="5,0,5,0" FontSize="16"
+                    <StackPanel Orientation="Horizontal" Margin="5,10,5,10" Grid.Row="0">
+                        <TextBlock x:Uid="SelectCBGBlock" VerticalAlignment="Center" FontSize="17"/>
+                        <Button x:Uid="CBGSaveButton" Click="Button_Click_1" Margin="5,0,5,0" FontSize="16"
                                         Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"/>
-                            <Border BorderBrush="Gray" BorderThickness="1,0,1,0" Margin="8,0,3,0"/>
-                            <Button x:Uid="CBGCusButton" Name="CustomizeCBG" Style="{StaticResource ButtonRevealStyle}"
+                        <Border BorderBrush="Gray" BorderThickness="1,0,1,0" Margin="8,0,3,0"/>
+                        <Button x:Uid="CBGCusButton" Name="CustomizeCBG" Style="{StaticResource ButtonRevealStyle}"
                                     HorizontalAlignment="Right" Margin="10,0,5,0" FontSize="16" BorderThickness="1"
                                     Click="CustomizeCBG_Click"/>
-                        </StackPanel>
+                    </StackPanel>
 
-                        <GridView Grid.Row="1" Name="CBGGridView">
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG1">
-                                <Image Source="/Assets/CoverBG/CBG1.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                    <GridView Grid.Row="1" Name="CBGGridView">
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG1">
+                            <Image Source="/Assets/CoverBG/CBG1.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG2">
-                                <Image Source="/Assets/CoverBG/CBG2.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG2">
+                            <Image Source="/Assets/CoverBG/CBG2.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG3">
-                                <Image Source="/Assets/CoverBG/CBG3.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG3">
+                            <Image Source="/Assets/CoverBG/CBG3.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG4">
-                                <Image Source="/Assets/CoverBG/CBG4.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG4">
+                            <Image Source="/Assets/CoverBG/CBG4.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG5">
-                                <Image Source="/Assets/CoverBG/CBG5.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG5">
+                            <Image Source="/Assets/CoverBG/CBG5.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG6">
-                                <Image Source="/Assets/CoverBG/CBG6.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG6">
+                            <Image Source="/Assets/CoverBG/CBG6.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG7">
-                                <Image Source="/Assets/CoverBG/CBG7.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG7">
+                            <Image Source="/Assets/CoverBG/CBG7.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG8">
-                                <Image Source="/Assets/CoverBG/CBG8.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG8">
+                            <Image Source="/Assets/CoverBG/CBG8.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG9">
-                                <Image Source="/Assets/CoverBG/CBG9.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG9">
+                            <Image Source="/Assets/CoverBG/CBG9.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG10">
-                                <Image Source="/Assets/CoverBG/CBG10.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG10">
+                            <Image Source="/Assets/CoverBG/CBG10.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG11">
-                                <Image Source="/Assets/CoverBG/CBG11.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG11">
+                            <Image Source="/Assets/CoverBG/CBG11.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG12">
-                                <Image Source="/Assets/CoverBG/CBG12.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG12">
+                            <Image Source="/Assets/CoverBG/CBG12.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG13">
-                                <Image Source="/Assets/CoverBG/CBG13.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG13">
+                            <Image Source="/Assets/CoverBG/CBG13.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG14">
-                                <Image Source="/Assets/CoverBG/CBG14.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG14">
+                            <Image Source="/Assets/CoverBG/CBG14.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG15">
-                                <Image Source="/Assets/CoverBG/CBG15.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG15">
+                            <Image Source="/Assets/CoverBG/CBG15.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG16">
-                                <Image Source="/Assets/CoverBG/CBG16.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG16">
+                            <Image Source="/Assets/CoverBG/CBG16.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG17">
-                                <Image Source="/Assets/CoverBG/CBG17.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG17">
+                            <Image Source="/Assets/CoverBG/CBG17.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG18">
-                                <Image Source="/Assets/CoverBG/CBG18.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG18">
+                            <Image Source="/Assets/CoverBG/CBG18.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG19">
-                                <Image Source="/Assets/CoverBG/CBG19.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG19">
+                            <Image Source="/Assets/CoverBG/CBG19.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG22">
-                                <Image Source="/Assets/CoverBG/CBG22.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG22">
+                            <Image Source="/Assets/CoverBG/CBG22.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG23">
-                                <Image Source="/Assets/CoverBG/CBG23.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG23">
+                            <Image Source="/Assets/CoverBG/CBG23.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG24">
-                                <Image Source="/Assets/CoverBG/CBG24.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG24">
+                            <Image Source="/Assets/CoverBG/CBG24.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG25">
-                                <Image Source="/Assets/CoverBG/CBG25.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG25">
+                            <Image Source="/Assets/CoverBG/CBG25.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                            <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG26">
-                                <Image Source="/Assets/CoverBG/CBG26.jpg" Stretch="UniformToFill"/>
-                            </GridViewItem>
+                        <GridViewItem Width="180" Height="180" Padding="10,10,10,10" Name="CBG26">
+                            <Image Source="/Assets/CoverBG/CBG26.jpg" Stretch="UniformToFill"/>
+                        </GridViewItem>
 
-                        </GridView>
-                    </Grid>
-                </PivotItem>
+                    </GridView>
+                </Grid>
+            </PivotItem>
 
-                <PivotItem x:Uid="PivotHeader2">
-                    <ScrollViewer>
-                        <StackPanel>
-                            <ComboBox x:Uid="LangComboHeader" Name="selectLang"
+            <PivotItem x:Uid="PivotHeader2">
+                <ScrollViewer>
+                    <StackPanel>
+                        <ComboBox x:Uid="LangComboHeader" Name="selectLang"
                                       Margin="0,5,0,10" SelectionChanged="selectLang_SelectionChanged">
-                                <ComboBoxItem Content="简体中文"/>
-                                <ComboBoxItem Content="English"/>
-                            </ComboBox>
+                            <ComboBoxItem Content="简体中文"/>
+                            <ComboBoxItem Content="English"/>
+                        </ComboBox>
 
-                            <ToggleSwitch x:Uid="CoverTileSwitchHeader" Toggled="ToggleSwitch_Toggled"
+                        <ToggleSwitch x:Uid="CoverTileSwitchHeader" Toggled="ToggleSwitch_Toggled"
                                           Name="coverTileToggle" Margin="0,5,0,5"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <ToggleSwitch x:Uid="WHSwitch" Header="Windows Hello" Name="WHToggle" Toggled="WHToggle_Toggled"
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleSwitch x:Uid="WHSwitch" Header="Windows Hello" Name="WHToggle" Toggled="WHToggle_Toggled"
                                           Margin="0,5,0,5"/>
-                                <Button x:Uid="LockButton" Click="Button_Click_2" BorderThickness="1"
+                            <Button x:Uid="LockButton" Click="Button_Click_2" BorderThickness="1"
                                         Style="{StaticResource ButtonRevealStyle}"
                                         Name="LockButton"/>
-                            </StackPanel>
+                        </StackPanel>
 
-                            <ToggleSwitch x:Uid="AutoDelSwitch" Toggled="autoDelete_Toggled"
+                        <ToggleSwitch x:Uid="AutoDelSwitch" Toggled="autoDelete_Toggled"
                                           Name="autoDelete" Margin="0,5,0,5"/>
 
-                            <TextBlock x:Uid="ManagerCEBlock" Margin="0,10,0,10"/>
+                        <TextBlock x:Uid="ManagerCEBlock" Margin="0,10,0,10"/>
 
-                            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Margin="0,0,0,10">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="50"/>
-                                    </Grid.RowDefinitions>
-                                    <ListView Name="CoverEventsManagerListView" ItemsSource="{x:Bind CoverEventsCollection}"
+                        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <ListView Name="CoverEventsManagerListView" ItemsSource="{x:Bind CoverEventsCollection}"
                                           Width="350" Grid.Row="0" MaxHeight="150" SelectionChanged="CoverEventsManagerListView_SelectionChanged">
-                                        <ListView.ItemContainerStyle>
-                                            <Style TargetType="ListViewItem">
-                                                <Setter Property="HorizontalAlignment" Value="Stretch" />
-                                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                                            </Style>
-                                        </ListView.ItemContainerStyle>
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
 
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate x:DataType="model:CoverEvents">
-                                                <Grid Margin="0,5,0,5">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="auto"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate x:DataType="model:CoverEvents">
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
-                                                    <TextBlock Text="{x:Bind header, Mode=OneWay}" Grid.Column="0" VerticalAlignment="Center"
+                                                <TextBlock Text="{x:Bind header, Mode=OneWay}" Grid.Column="0" VerticalAlignment="Center"
                                                                HorizontalAlignment="Center" FontWeight="Bold"/>
 
-                                                    <Grid Grid.Column="1">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="auto"/>
-                                                            <RowDefinition Height="*"/>
-                                                        </Grid.RowDefinitions>
+                                                <Grid Grid.Column="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
 
-                                                        <TextBlock Text="{x:Bind title, Mode=OneWay}" VerticalAlignment="Center"
+                                                    <TextBlock Text="{x:Bind title, Mode=OneWay}" VerticalAlignment="Center"
                                                                    HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="17"
                                                                    Grid.Row="0"/>
 
-                                                        <TextBlock Text="{x:Bind date.Date.ToShortDateString(), Mode=OneWay}" VerticalAlignment="Center"
+                                                    <TextBlock Text="{x:Bind date.Date.ToShortDateString(), Mode=OneWay}" VerticalAlignment="Center"
                                                                    HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="15"
                                                                    Grid.Row="1"/>
-                                                    </Grid>
                                                 </Grid>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
 
-                                    <Button Content="&#xE792;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                <Button Content="&#xE792;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                 Height="50" Width="50" FontSize="17" Background="Transparent"
                                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1" x:Uid="SetTileBGButton"
                                                 Grid.Row="1" Name="EditTileBGButton" Click="EditTileBGButton_Click">
-                                        <Button.Flyout>
-                                            <Flyout x:Name="EditTileBGFlyout">
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="auto"/>
-                                                        <RowDefinition Height="auto"/>
-                                                    </Grid.RowDefinitions>
+                                    <Button.Flyout>
+                                        <Flyout x:Name="EditTileBGFlyout">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
 
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
 
-                                                    <GridView MaxWidth="420" MaxHeight="480" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                                <GridView MaxWidth="420" MaxHeight="480" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Hidden"
                                                               Name="CoverTilesGridView">
-                                                        <GridViewItem Name="Default" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Border BorderThickness="1" BorderBrush="Black" Width="67" Height="67">
-                                                                <TextBlock x:Uid="DefaultTileBG" TextWrapping="Wrap" HorizontalAlignment="Center"
+                                                    <GridViewItem Name="Default" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Border BorderThickness="1" BorderBrush="Black" Width="67" Height="67">
+                                                            <TextBlock x:Uid="DefaultTileBG" TextWrapping="Wrap" HorizontalAlignment="Center"
                                                                            VerticalAlignment="Center"/>
-                                                            </Border>
-                                                        </GridViewItem>
+                                                        </Border>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG1" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG1.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG1" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG1.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG2" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG2.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG2" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG2.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG3" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG3.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG3" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG3.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG4" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG4.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG4" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG4.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG5" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG5.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG5" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG5.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG6" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG6.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG6" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG6.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG7" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG7.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG7" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG7.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG8" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG8.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG8" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG8.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG9" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG9.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG9" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG9.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG10" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG10.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG10" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG10.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG11" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG11.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG11" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG11.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG12" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG12.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG12" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG12.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG13" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG13.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG13" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG13.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG14" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG14.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG14" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG14.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG15" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG15.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG15" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG15.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG16" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG16.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG16" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG16.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG17" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG17.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG17" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG17.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG18" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG18.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG18" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG18.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG19" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG19.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG19" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG19.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG20" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG20.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG20" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG20.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG21" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG21.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG21" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG21.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG22" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG22.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG22" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG22.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG23" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG23.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG23" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG23.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG24" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG24.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG24" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG24.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG25" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG25.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG25" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG25.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG26" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG26.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG26" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG26.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG27" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG27.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG27" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG27.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG28" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG28.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG28" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG28.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG29" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG29.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG29" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG29.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG30" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG30.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG30" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG30.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG31" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG31.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG31" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG31.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG32" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG32.jpg"/>
-                                                        </GridViewItem>
+                                                    <GridViewItem Name="TileBG32" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG32.jpg"/>
+                                                    </GridViewItem>
 
-                                                        <GridViewItem Name="TileBG33" Height="77" Width="77" Padding="5,5,5,5">
-                                                            <Image Source="/Assets/TileBG/TileBG33.jpg"/>
-                                                        </GridViewItem>
-                                                    </GridView>
+                                                    <GridViewItem Name="TileBG33" Height="77" Width="77" Padding="5,5,5,5">
+                                                        <Image Source="/Assets/TileBG/TileBG33.jpg"/>
+                                                    </GridViewItem>
+                                                </GridView>
 
-                                                    <TextBlock Grid.Row="1" Name="EditTileBGInfo" Margin="5,5,5,5" TextWrapping="Wrap"
+                                                <TextBlock Grid.Row="1" Name="EditTileBGInfo" Margin="5,5,5,5" TextWrapping="Wrap"
                                                                HorizontalAlignment="Center" VerticalAlignment="Center"
                                                                Grid.Column="0" FontSize="15" x:Uid="EditTileBGInfo"/>
-                                                    <Button x:Uid="TileBGSaveButton" Background="LightSkyBlue" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"
+                                                <Button x:Uid="TileBGSaveButton" Background="LightSkyBlue" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"
                                                                 Name="SaveButton" HorizontalAlignment="Stretch" Foreground="Black"
                                                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                                                                 Click="SaveButton_Click"/>
-                                                </Grid>
-                                            </Flyout>
-                                        </Button.Flyout>
-                                    </Button>
+                                            </Grid>
+                                        </Flyout>
+                                    </Button.Flyout>
+                                </Button>
 
-                                    <Button Content="&#xE107;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                <Button Content="&#xE107;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Center"
                                                 Height="50" Width="50" FontSize="17" Background="Transparent"
                                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1" x:Uid="CoverEventsDel"
                                                 Grid.Row="1" Name="DeleteButton" Click="DeleteButton_Click">
-                                        <Button.Flyout>
-                                            <Flyout x:Name="DeleteFlyout">
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="auto"/>
-                                                        <RowDefinition Height="auto"/>
-                                                    </Grid.RowDefinitions>
+                                    <Button.Flyout>
+                                        <Flyout x:Name="DeleteFlyout">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
 
-                                                    <TextBlock Grid.Row="0" Name="DeleteInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
-                                                    <Button x:Uid="CEDelButton" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
+                                                <TextBlock Grid.Row="0" Name="DeleteInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
+                                                <Button x:Uid="CEDelButton" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
                                                                 Name="ConfirmButton" HorizontalAlignment="Stretch" Foreground="Black"
                                                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                                                                 Click="ConfirmButton_Click"/>
-                                                </Grid>
-                                            </Flyout>
-                                        </Button.Flyout>
-                                    </Button>
-                                </Grid>
-                            </Border>
+                                            </Grid>
+                                        </Flyout>
+                                    </Button.Flyout>
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+
+
+
+            <PivotItem x:Uid="PivotHeader3">
+                <ScrollViewer>
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock x:Uid="titleBar" FontSize="18" Margin="0,5,0,5" FontWeight="Bold"/>
+                            <TextBlock Text="Version: 1.8.1" FontSize="15" Margin="0,0,0,0" FontWeight="Bold"/>
                         </StackPanel>
-                    </ScrollViewer>
-                </PivotItem>
 
-
-
-                <PivotItem x:Uid="PivotHeader3">
-                    <ScrollViewer>
                         <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock x:Uid="titleBar" FontSize="18" Margin="0,5,0,5" FontWeight="Bold"/>
-                                <TextBlock Text="Version: 1.8.1" FontSize="15" Margin="0,0,0,0" FontWeight="Bold"/>
-                            </StackPanel>
+                            <TextBlock x:Uid="AboutBlock1" Margin="0,30,0,10" FontSize="15" TextWrapping="Wrap">
 
-                            <StackPanel>
-                                <TextBlock x:Uid="AboutBlock1" Margin="0,30,0,10" FontSize="15" TextWrapping="Wrap">
+                            </TextBlock>
 
-                                </TextBlock>
+                            <TextBlock x:Uid="AboutBlock2" FontSize="15" TextWrapping="Wrap">
 
-                                <TextBlock x:Uid="AboutBlock2" FontSize="15" TextWrapping="Wrap">
-
-                                </TextBlock>
-                            </StackPanel>
+                            </TextBlock>
                         </StackPanel>
-                    </ScrollViewer>
-                </PivotItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
 
-                <PivotItem x:Uid="PivotHeader4">
-                    <ScrollViewer>
-                        <StackPanel Margin="0,0,0,10">
-                            <TextBlock x:Uid="HotKey1"
+            <PivotItem x:Uid="PivotHeader4">
+                <ScrollViewer>
+                    <StackPanel Margin="0,0,0,10">
+                        <TextBlock x:Uid="HotKey1"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                            <TextBlock x:Uid="HotKey2"
+                        <TextBlock x:Uid="HotKey2"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                            <TextBlock x:Uid="HotKey3"
+                        <TextBlock x:Uid="HotKey3"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                            <TextBlock x:Uid="HotKey4"
+                        <TextBlock x:Uid="HotKey4"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                            <TextBlock x:Uid="HotKey5"
+                        <TextBlock x:Uid="HotKey5"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                            <TextBlock x:Uid="HotKey6"
+                        <TextBlock x:Uid="HotKey6"
                                    TextWrapping="Wrap" Margin="0,5,0,5"/>
-                        </StackPanel>
-                    </ScrollViewer>
-                </PivotItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
 
-                <PivotItem x:Uid="PivotHeader5">
-                    <ScrollViewer>
+            <PivotItem x:Uid="PivotHeader5">
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock x:Uid="LogBlock" FontSize="16" Margin="0,5,0,5" TextWrapping="Wrap"/>
                         <StackPanel>
-                            <TextBlock x:Uid="LogBlock" FontSize="16" Margin="0,5,0,5" TextWrapping="Wrap"/>
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <HyperlinkButton x:Uid="LogHyper1" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/10/lightdays-1-2-0-1-7-0-updatelog"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <HyperlinkButton x:Uid="LogHyper2" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/17/lightdays-1-8-0-updatelog"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <HyperlinkButton x:Uid="LogHyper3" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/21/lightdays-1-8-1-updatelog"/>
-                                </StackPanel>
-
+                            <StackPanel Orientation="Horizontal">
+                                <HyperlinkButton x:Uid="LogHyper1" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/10/lightdays-1-2-0-1-7-0-updatelog"/>
                             </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <HyperlinkButton x:Uid="LogHyper2" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/17/lightdays-1-8-0-updatelog"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <HyperlinkButton x:Uid="LogHyper3" FontSize="15" NavigateUri="https://www.dexstudio.cn/2018/01/21/lightdays-1-8-1-updatelog"/>
+                            </StackPanel>
+
                         </StackPanel>
-                    </ScrollViewer>
-                </PivotItem>
-            </Pivot>
-        </Grid>
-    </Frame>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
 </Page>

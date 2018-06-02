@@ -97,6 +97,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helper\CheckVisibility.cs" />
     <Compile Include="View\addPage.xaml.cs">
       <DependentUpon>addPage.xaml</DependentUpon>
     </Compile>
@@ -379,7 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.7</Version>
+      <Version>6.1.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

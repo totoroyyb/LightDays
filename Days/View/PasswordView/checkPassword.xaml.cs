@@ -25,43 +25,42 @@ namespace Days
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             KeyCredentialRetrievalResult keyCreationResult = await KeyCredentialManager.RequestCreateAsync("WinHello", KeyCredentialCreationOption.ReplaceExisting);
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
             if (keyCreationResult.Status == KeyCredentialStatus.Success)
             {
                 this.Frame.Navigate(typeof(MainPage));
             }
             else if (keyCreationResult.Status == KeyCredentialStatus.NotFound)
             {
-                MessageDialog message = new MessageDialog("暂时无法使用Windows Hello，请先在系统内配置Windows Hello");
+                MessageDialog message = new MessageDialog(resourceLoader.GetString("WHError1"));
                 await message.ShowAsync();
             }
             else if (keyCreationResult.Status == KeyCredentialStatus.UnknownError)
             {
-                MessageDialog message = new MessageDialog("您的设备不支持Windows Hello，或其配置有误，出现未知错误");
+                MessageDialog message = new MessageDialog(resourceLoader.GetString("WHError2"));
                 await message.ShowAsync();
             }
-        }
-
-        private void checkPasswordFrame_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            if (IsCtrlKeyPressed())
-            {
-                if (e.Key == VirtualKey.O)
-                {
-                    Button_Click(this, null);
-                }
-            }
-        }
-
-        private static bool IsCtrlKeyPressed()
-        {
-            var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
-            return (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             MemoryCleaner.FreeUpMemory();
             MemoryCleaner.isLockDown = false;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            KeyboardAccelerator unlock = new KeyboardAccelerator();
+            unlock.Key = VirtualKey.O;
+            unlock.Modifiers = VirtualKeyModifiers.Control;
+            unlock.Invoked += Unlock_Invoked;
+            this.KeyboardAccelerators.Add(unlock);
+        }
+
+        private void Unlock_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            Button_Click(this, null);
+            args.Handled = true;
         }
     }
 }

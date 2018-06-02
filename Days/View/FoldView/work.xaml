@@ -24,7 +24,7 @@
 
         <ListView ItemsSource="{x:Bind eventList}" Grid.Row="0"
                   Name="EventListView">
-            
+
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -68,50 +68,51 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="&#xE792;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Center"
+        <Grid Name="ButtonGrid" Grid.Row="1">
+            <Button Content="&#xE792;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Center"
                 Height="50" Width="50" FontSize="17" Background="Transparent" x:Uid="EditEventButton"
                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                 Grid.Row="1" Name="EditButton" Click="EditButton_Click">
-            <Button.Flyout>
-                <Flyout x:Name="EditFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
+                <Button.Flyout>
+                    <Flyout x:Name="EditFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Name="EditInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="0" Name="EditInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
 
-                        <Button x:Uid="EditEventFlyout" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
+                            <Button x:Uid="EditEventFlyout" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
                                 Name="EditEvent" HorizontalAlignment="Stretch" x:FieldModifier="public"
                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                                 Click="EditEvent_Click"/>
-                    </Grid>
-                </Flyout>
-            </Button.Flyout>
-        </Button>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
 
-        <Button Content="&#xE107;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Top"
+            <Button Content="&#xE107;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" VerticalAlignment="Top"
                 Height="50" Width="50" FontSize="17" Background="Transparent" x:Uid="DelEventButton"
                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                 Grid.Row="1" Name="DeleteButton" Click="DeleteButton_Click">
-            <Button.Flyout>
-                <Flyout x:Name="DeleteFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
+                <Button.Flyout>
+                    <Flyout x:Name="DeleteFlyout" FlyoutPresenterStyle="{StaticResource AcrylicFlyout}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Name="DeleteInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
-                        <Button x:Uid="DelEventFlyout" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
+                            <TextBlock Grid.Row="0" Name="DeleteInfo" Margin="5,5,5,5" TextWrapping="Wrap"/>
+                            <Button x:Uid="DelEventFlyout" Background="LightSkyBlue" Grid.Row="1" Margin="5,5,5,5"
                                 Name="ConfirmButton" HorizontalAlignment="Stretch" Foreground="White"
                                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
                                 Click="ConfirmButton_Click"/>
-                    </Grid>
-                </Flyout>
-            </Button.Flyout>
-        </Button>
-
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

@@ -1,6 +1,7 @@
 ﻿using Days.Model;
 using Microsoft.Services.Store.Engagement;
 using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
@@ -204,23 +205,26 @@ namespace Days
             }
         }
 
-        private void ReadAllEventsInfo()
+        private async void ReadAllEventsInfo()
         {
-            ReadBasicEventsData();
-            ReadLifeEventsData();
-            ReadBirthdayEventsData();
-            ReadLoveEventsData();
-            ReadFestivalEventsData();
-            ReadEntertainmentEventsData();
-            ReadStudyEventsData();
-            ReadWorkEventsData();
-            ReadOtherEventsData();
-
-            if (AutoDelete.AutoDeleteStatus)
+            await Task.Run(() =>
             {
-                AutoDelete.DeleteOutDatedAllEvents();
-                AutoDelete.DeleteOutDatedCoverEvents();
-            }
+                ReadBasicEventsData();
+                ReadLifeEventsData();
+                ReadBirthdayEventsData();
+                ReadLoveEventsData();
+                ReadFestivalEventsData();
+                ReadEntertainmentEventsData();
+                ReadStudyEventsData();
+                ReadWorkEventsData();
+                ReadOtherEventsData();
+
+                if (AutoDelete.AutoDeleteStatus)
+                {
+                    AutoDelete.DeleteOutDatedAllEvents();
+                    AutoDelete.DeleteOutDatedCoverEvents();
+                }
+            });
         }
 
         private void ReadCoverSource()

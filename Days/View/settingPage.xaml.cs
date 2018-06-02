@@ -204,14 +204,6 @@ namespace Days
             OnNavigateParentReady(this, null);
         }
 
-        private void settingPageFrame_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            if (e.Key == VirtualKey.Escape)
-            {
-                this.Frame.Navigate(typeof(coverPage));
-            }
-        }
-
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -370,6 +362,11 @@ namespace Days
             {
                 MemoryCleaner.FreeUpMemory();
             }
+        }
+
+        private void GoBack_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(coverPage));
         }
     }
 }

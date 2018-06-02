@@ -87,5 +87,17 @@ namespace Days
                 MemoryCleaner.FreeUpMemory();
             }
         }
+
+        private void OpenSettings_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(settingPage));
+            args.Handled = true;
+        }
+
+        private void AddNew_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(addPage));
+            args.Handled = true;
+        }
     }
 }

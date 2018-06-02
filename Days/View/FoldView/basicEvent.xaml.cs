@@ -27,6 +27,13 @@ namespace Days
         {
             this.InitializeComponent();
             eventList = EventsManager.getBasicEvents();
+            eventList.CollectionChanged += EventList_CollectionChanged;
+            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
+        }
+
+        private void EventList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -117,6 +124,8 @@ namespace Days
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
+            eventList.CollectionChanged -= EventList_CollectionChanged;
+
             if (!MemoryCleaner.isLockDown)
             {
                 eventList = null;

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
 
-    <Frame Name="MainPageFrame" KeyDown="MainPageFrame_KeyDown">
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup >
                 <VisualState>
@@ -32,65 +32,63 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="4*"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
-
-                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                Name="foldFrame">
-                    <Frame.ContentTransitions>
-                        <TransitionCollection>
-                            <NavigationThemeTransition/>
-                        </TransitionCollection>
-                    </Frame.ContentTransitions>
-                </Frame>
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
 
-                <Canvas Name="shadowHost" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Canvas>
-                <Rectangle Name="shadowTarget" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="White"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+            <Canvas Name="shadowHost" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Canvas>
+            <Rectangle Name="shadowTarget" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White"/>
+                </Rectangle.Fill>
+            </Rectangle>
 
-                <Image Stretch="UniformToFill" Name="CBGImage"
+            <Image Stretch="UniformToFill" Name="CBGImage"
                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                x:Name="coverFrame" x:FieldModifier="Public">
-                    <Frame.ContentTransitions>
-                        <TransitionCollection>
-                            <NavigationThemeTransition/>
-                        </TransitionCollection>
-                    </Frame.ContentTransitions>
-                </Frame>
-            </Grid>
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </Grid>
 
-            <Grid Grid.Row="0" Name="MenuGrid">
-                <Grid.Background>
-                    <AcrylicBrush BackgroundSource="HostBackdrop"
+        <Grid Grid.Row="0" Name="MenuGrid">
+            <Grid.Background>
+                <AcrylicBrush BackgroundSource="HostBackdrop"
                               TintColor="White"
                               TintOpacity="0.4"/>
-                </Grid.Background>
+            </Grid.Background>
 
-                <TextBlock x:Uid="titleBar" FontSize="14" Height="32" FontWeight="Bold"
+            <TextBlock x:Uid="titleBar" FontSize="14" Height="32" FontWeight="Bold"
                    Style="{StaticResource CaptionTextBlockStyle}"
                    HorizontalAlignment="Left" Padding="10,6,0,0">
-                </TextBlock>
-            </Grid>
+            </TextBlock>
         </Grid>
-    </Frame>
+    </Grid>
 </Page>
