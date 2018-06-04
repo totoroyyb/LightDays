@@ -9,7 +9,7 @@
 
     <Grid>
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup >
+            <VisualStateGroup>
                 <VisualState>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="880"/>
@@ -38,7 +38,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="4*"/>
@@ -69,7 +69,7 @@
                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
             <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-               x:Name="coverFrame" x:FieldModifier="Public">
+               x:Name="coverFrame">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition/>
@@ -78,7 +78,7 @@
             </Frame>
         </Grid>
 
-        <Grid Grid.Row="0" Name="MenuGrid">
+        <!--<Grid Grid.Row="0" Name="MenuGrid">
             <Grid.Background>
                 <AcrylicBrush BackgroundSource="HostBackdrop"
                               TintColor="White"
@@ -89,6 +89,6 @@
                    Style="{StaticResource CaptionTextBlockStyle}"
                    HorizontalAlignment="Left" Padding="10,6,0,0">
             </TextBlock>
-        </Grid>
+        </Grid>-->
     </Grid>
 </Page>

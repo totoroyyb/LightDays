@@ -97,6 +97,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helper\CheckContract.cs" />
     <Compile Include="Helper\CheckVisibility.cs" />
     <Compile Include="View\addPage.xaml.cs">
       <DependentUpon>addPage.xaml</DependentUpon>

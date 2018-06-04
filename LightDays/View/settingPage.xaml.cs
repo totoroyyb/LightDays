@@ -9,6 +9,7 @@ using Windows.System;
 using System.Collections.ObjectModel;
 using Windows.Globalization;
 using Days.Helper;
+using Windows.UI.ViewManagement;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -28,6 +29,12 @@ namespace Days
         public settingPage()
         {
             this.InitializeComponent();
+            Init();
+            checkInit = true;
+        }
+
+        private void Init()
+        {
             coverTileToggle.IsOn = Tile.tileStatus;
             WHToggle.IsOn = Password.winHelloStatus;
             autoDelete.IsOn = AutoDelete.AutoDeleteStatus;
@@ -35,7 +42,6 @@ namespace Days
             SetLockButtonState();
             CoverEventsCollection = CoverEventsManager.GetCoverEvents();
             EditTileBGButton.IsEnabled = false;
-            checkInit = true;
         }
 
         private void SetLockButtonState()
