@@ -96,7 +96,7 @@ namespace Days
         {
             var framework = (FrameworkElement)e.OriginalSource;
             Object dataContext = framework.DataContext;
-            
+
             if (dataContext != null)
             {
                 NewView.dataContext = dataContext;
@@ -118,8 +118,8 @@ namespace Days
 
                 newViewId = ApplicationView.GetForCurrentView().Id;
             });
-            bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
 
+            bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId, ViewSizePreference.UseHalf);
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
