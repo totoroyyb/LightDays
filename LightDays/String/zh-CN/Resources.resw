@@ -507,4 +507,10 @@
   <data name="OpenNewView.Text" xml:space="preserve">
     <value>在新的窗口打开</value>
   </data>
+  <data name="LockDownExpander.Header" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="OthersExpander.Header" xml:space="preserve">
+    <value>其他</value>
+  </data>
 </root>
