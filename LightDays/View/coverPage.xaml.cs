@@ -99,5 +99,10 @@ namespace Days
             this.Frame.Navigate(typeof(addPage));
             args.Handled = true;
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            RequestedTheme = ElementTheme.Dark;
+        }
     }
 }

@@ -9,19 +9,14 @@
     mc:Ignorable="d" Unloaded="Page_Unloaded">
 
     <Page.Resources>
-        <MenuFlyout x:Name="RightTabMenuFlyout">
-            <MenuFlyoutItem x:Uid="OpenNewView" Name="NewViewButton" Click="NewViewButton_Click"/>
-        </MenuFlyout>
-
+        <ResourceDictionary>
+            <MenuFlyout x:Name="RightTabMenuFlyout">
+                <MenuFlyoutItem x:Uid="OpenNewView" Name="NewViewButton" Click="NewViewButton_Click"/>
+            </MenuFlyout>
+        </ResourceDictionary>
     </Page.Resources>
-    
-    <Grid>
-        <Grid.Background>
-            <AcrylicBrush TintColor="White"
-                          TintOpacity="0.5"
-                          FallbackColor="GhostWhite"
-                          BackgroundSource="HostBackdrop"/>
-        </Grid.Background>
+
+    <Grid Background="{ThemeResource AcylicHost03}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

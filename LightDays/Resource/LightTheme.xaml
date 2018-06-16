@@ -1,0 +1,43 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Days.Resource">
+
+    <AcrylicBrush x:Key="AcylicHost01"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="White"
+                  TintOpacity="0.8"
+                  FallbackColor="White"/>
+
+    <AcrylicBrush x:Key="AcylicHost02"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="White"
+                  TintOpacity="0.6"
+                  FallbackColor="White"/>
+
+    <AcrylicBrush x:Key="AcylicHost03"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="White"
+                  TintOpacity="0.4"
+                  FallbackColor="White"/>
+
+    <AcrylicBrush x:Key="Acylic01"
+                  BackgroundSource="Backdrop"
+                  TintColor="White"
+                  TintOpacity="0.8"
+                  FallbackColor="White"/>
+
+    <AcrylicBrush x:Key="Acylic02"
+                  BackgroundSource="Backdrop"
+                  TintColor="White"
+                  TintOpacity="0.6"
+                  FallbackColor="White"/>
+
+    <AcrylicBrush x:Key="Acylic03"
+                  BackgroundSource="Backdrop"
+                  TintColor="White"
+                  TintOpacity="0.4"
+                  FallbackColor="White"/>
+
+
+</ResourceDictionary>

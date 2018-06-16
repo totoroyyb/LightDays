@@ -15,6 +15,8 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1" x:Name="MainContentGrid">
+            <Button Content="Test" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_5"/>
+
             <Button Content="&#xE713;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Height="50" Width="50" FontSize="20" Background="Transparent"
                 Style="{StaticResource ButtonRevealStyle}" BorderThickness="1"
@@ -84,14 +86,9 @@
                 </Button.Flyout>
             </Button>
 
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300" CornerRadius="10,10,10,10">
-                <Grid.Background>
-                    <AcrylicBrush BackgroundSource="Backdrop"
-                               TintColor="White"
-                               TintOpacity="0.3"
-                              FallbackColor="White"/>
-                </Grid.Background>
-
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300" CornerRadius="10,10,10,10"
+                  Background="{ThemeResource Acylic03}">
+                
                 <Pivot ItemsSource="{x:Bind CoverEventsCollection}" Name="CoverEventsPivot" Margin="0,-2,0,0">
                     <Pivot.HeaderTemplate>
                         <DataTemplate x:DataType="model:CoverEvents">

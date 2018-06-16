@@ -4,28 +4,33 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:local="using:Days"
-    RequestedTheme="Light">
+    >
 
     <Application.Resources>
-        <AcrylicBrush x:Key="CustomziedAcrylicBrush"
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary Source="/Resource/LightTheme.xaml" x:Key="Light"/>
+                <ResourceDictionary Source="/Resource/DarkTheme.xaml" x:Key="Dark"/>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <AcrylicBrush x:Key="CustomziedAcrylicBrush"
                       BackgroundSource="Backdrop"
                       TintColor="WhiteSmoke"
                       TintOpacity="0.6"
                       FallbackColor="WhiteSmoke"/>
 
-        <Style x:Key="AcrylicFlyout" TargetType="FlyoutPresenter">
-            <Setter Property="Background" Value="{StaticResource CustomziedAcrylicBrush}"/>
-        </Style>
+            <Style x:Key="AcrylicFlyout" TargetType="FlyoutPresenter">
+                <Setter Property="Background" Value="{StaticResource CustomziedAcrylicBrush}"/>
+            </Style>
 
-        <Style x:Key="DefaultExpanderStyle" TargetType="controls:Expander">
-            <Setter Property="IsExpanded" Value="False"/>
-            <Setter Property="ExpandDirection" Value="Down"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Margin" Value="0,5,0,5"/>
-        </Style>
-
+            <Style x:Key="DefaultExpanderStyle" TargetType="controls:Expander">
+                <Setter Property="IsExpanded" Value="False"/>
+                <Setter Property="ExpandDirection" Value="Down"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
-
 </Application>
