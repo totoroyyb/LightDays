@@ -3,37 +3,37 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Days.Resource">
     
-    <AcrylicBrush x:Key="AcylicHost01"
+    <AcrylicBrush x:Key="AcrylicHost01"
                   BackgroundSource="HostBackdrop"
                   TintColor="Black"
                   TintOpacity="0.8"
                   FallbackColor="Black"/>
 
-    <AcrylicBrush x:Key="AcylicHost02"
+    <AcrylicBrush x:Key="AcrylicHost02"
                   BackgroundSource="HostBackdrop"
                   TintColor="Black"
                   TintOpacity="0.6"
                   FallbackColor="Black"/>
 
-    <AcrylicBrush x:Key="AcylicHost03"
+    <AcrylicBrush x:Key="AcrylicHost03"
                   BackgroundSource="HostBackdrop"
                   TintColor="Black"
                   TintOpacity="0.4"
                   FallbackColor="Black"/>
 
-    <AcrylicBrush x:Key="Acylic01"
+    <AcrylicBrush x:Key="Acrylic01"
                   BackgroundSource="Backdrop"
                   TintColor="Black"
                   TintOpacity="0.8"
                   FallbackColor="Black"/>
 
-    <AcrylicBrush x:Key="Acylic02"
+    <AcrylicBrush x:Key="Acrylic02"
                   BackgroundSource="Backdrop"
                   TintColor="Black"
                   TintOpacity="0.6"
                   FallbackColor="Black"/>
 
-    <AcrylicBrush x:Key="Acylic03"
+    <AcrylicBrush x:Key="Acrylic03"
                   BackgroundSource="Backdrop"
                   TintColor="Black"
                   TintOpacity="0.4"

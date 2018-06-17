@@ -77,18 +77,5 @@
                 </Frame.ContentTransitions>
             </Frame>
         </Grid>
-
-        <!--<Grid Grid.Row="0" Name="MenuGrid">
-            <Grid.Background>
-                <AcrylicBrush BackgroundSource="HostBackdrop"
-                              TintColor="White"
-                              TintOpacity="0.4"/>
-            </Grid.Background>
-
-            <TextBlock x:Uid="titleBar" FontSize="14" Height="32" FontWeight="Bold"
-                   Style="{StaticResource CaptionTextBlockStyle}"
-                   HorizontalAlignment="Left" Padding="10,6,0,0">
-            </TextBlock>
-        </Grid>-->
     </Grid>
 </Page>

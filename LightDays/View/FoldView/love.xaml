@@ -8,14 +8,7 @@
     xmlns:model="using:Days.Model"
     mc:Ignorable="d" Unloaded="Page_Unloaded">
 
-    <Grid>
-        <Grid.Background>
-            <AcrylicBrush TintColor="White"
-                          TintOpacity="0.5"
-                          FallbackColor="GhostWhite"
-                          BackgroundSource="HostBackdrop"/>
-        </Grid.Background>
-
+    <Grid Background="{ThemeResource AcrylicHost03}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>

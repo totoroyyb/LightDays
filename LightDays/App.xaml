@@ -13,14 +13,8 @@
                 <ResourceDictionary Source="/Resource/DarkTheme.xaml" x:Key="Dark"/>
             </ResourceDictionary.ThemeDictionaries>
 
-            <AcrylicBrush x:Key="CustomziedAcrylicBrush"
-                      BackgroundSource="Backdrop"
-                      TintColor="WhiteSmoke"
-                      TintOpacity="0.6"
-                      FallbackColor="WhiteSmoke"/>
-
             <Style x:Key="AcrylicFlyout" TargetType="FlyoutPresenter">
-                <Setter Property="Background" Value="{StaticResource CustomziedAcrylicBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource Acrylic02}"/>
             </Style>
 
             <Style x:Key="DefaultExpanderStyle" TargetType="controls:Expander">

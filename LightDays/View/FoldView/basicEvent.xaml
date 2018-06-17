@@ -16,8 +16,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource AcylicHost03}">
-
+    <Grid Background="{ThemeResource AcrylicHost03}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>

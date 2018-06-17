@@ -8,7 +8,7 @@
     xmlns:model="using:Days.Model"
     mc:Ignorable="d" Unloaded="Page_Unloaded">
 
-    <Grid Background="{ThemeResource Acylic02}">
+    <Grid Background="{ThemeResource Acrylic02}">
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>

@@ -513,4 +513,19 @@
   <data name="OthersExpander.Header" xml:space="preserve">
     <value>Others</value>
   </data>
+  <data name="Theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="UIExpander.Header" xml:space="preserve">
+    <value>UI</value>
+  </data>
+  <data name="DarkRadioButton.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="DefaultRadioButton.Content" xml:space="preserve">
+    <value>Same as system setting</value>
+  </data>
+  <data name="LightRadioButton.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
 </root>

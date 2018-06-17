@@ -513,4 +513,19 @@
   <data name="OthersExpander.Header" xml:space="preserve">
     <value>其他</value>
   </data>
+  <data name="UIExpander.Header" xml:space="preserve">
+    <value>界面</value>
+  </data>
+  <data name="Theme.Text" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="DarkRadioButton.Content" xml:space="preserve">
+    <value>暗主题</value>
+  </data>
+  <data name="DefaultRadioButton.Content" xml:space="preserve">
+    <value>跟随系统主题</value>
+  </data>
+  <data name="LightRadioButton.Content" xml:space="preserve">
+    <value>亮主题</value>
+  </data>
 </root>

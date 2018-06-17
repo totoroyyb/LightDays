@@ -20,6 +20,7 @@ namespace Days
     {
         public App()
         {
+            ReadThemeData();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             RegisterNotificationChannelAsync();
@@ -111,6 +112,7 @@ namespace Days
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            //ReadThemeData();
             ReadLangData();
             ReadCoverInfo();
             ReadAllEventsInfo();
@@ -150,6 +152,22 @@ namespace Days
                 Window.Current.Activate();
                 
                 extendIntoTitleBar();
+            }
+        }
+
+        private void ReadThemeData()
+        {
+            int index = UserSettings.GetElementTheme();
+            if (index != -1 && index != (int)ElementTheme.Default)
+            {
+                if (index == (int)ElementTheme.Light)
+                {
+                    RequestedTheme = ApplicationTheme.Light;
+                }
+                else if (index == (int)ElementTheme.Dark)
+                {
+                    RequestedTheme = ApplicationTheme.Dark;
+                }
             }
         }
 

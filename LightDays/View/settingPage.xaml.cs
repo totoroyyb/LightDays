@@ -20,7 +20,7 @@ namespace Days
     /// </summary>
     public sealed partial class settingPage : Page
     {
-        public bool checkInit = false;
+        private bool checkInit;
         public delegate void MyEventHandler(object source, EventArgs e);
         public static event MyEventHandler OnNavigateParentReady;
         public static event MyEventHandler SetCBGImageReady;
@@ -28,6 +28,7 @@ namespace Days
 
         public settingPage()
         {
+            checkInit = false;
             this.InitializeComponent();
             Init();
             checkInit = true;
@@ -35,6 +36,7 @@ namespace Days
 
         private void Init()
         {
+            InitThemeRadioButton();
             coverTileToggle.IsOn = Tile.tileStatus;
             WHToggle.IsOn = Password.winHelloStatus;
             autoDelete.IsOn = AutoDelete.AutoDeleteStatus;
@@ -42,6 +44,23 @@ namespace Days
             SetLockButtonState();
             CoverEventsCollection = CoverEventsManager.GetCoverEvents();
             EditTileBGButton.IsEnabled = false;
+        }
+
+        private void InitThemeRadioButton()
+        {
+            ElementTheme theme = UserSettings.Theme;
+            if (theme == ElementTheme.Default)
+            {
+                DefaultRadioButton.IsChecked = true;
+            }
+            else if (theme == ElementTheme.Light)
+            {
+                LightRadioButton.IsChecked = true;
+            }
+            else if (theme == ElementTheme.Dark)
+            {
+                DarkRadioButton.IsChecked = true;
+            }
         }
 
         private void SetLockButtonState()
@@ -373,6 +392,28 @@ namespace Days
         private void GoBack_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
         {
             this.Frame.Navigate(typeof(coverPage));
+        }
+
+        private void ThemeRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (checkInit)
+            {
+                RadioButton radioButton = sender as RadioButton;
+                switch (radioButton.Name)
+                {
+                    case "LightRadioButton":
+                        UserSettings.SetElementTheme(ElementTheme.Light);
+                        break;
+
+                    case "DarkRadioButton":
+                        UserSettings.SetElementTheme(ElementTheme.Dark);
+                        break;
+
+                    case "DefaultRadioButton":
+                        UserSettings.SetElementTheme(ElementTheme.Default);
+                        break;
+                }
+            }
         }
     }
 }

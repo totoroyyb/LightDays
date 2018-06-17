@@ -30,14 +30,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1">
-            <Grid.Background>
-                <AcrylicBrush BackgroundSource="HostBackdrop"
-                              TintColor="White"
-                              TintOpacity="0.5"
-                              FallbackColor="GhostWhite"/>
-            </Grid.Background>
-
+        <Grid Grid.Column="1" Background="{ThemeResource AcrylicHost03}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="32"/>
                 <RowDefinition Height="*"/>
@@ -75,14 +68,7 @@
             </Grid.RowDefinitions>
 
             <Canvas Name="shadowHost" Grid.RowSpan="2"/>
-            <Rectangle Name="shadowTarget" Grid.RowSpan="2">
-                <Rectangle.Fill>
-                    <AcrylicBrush BackgroundSource="HostBackdrop"
-                              TintColor="White" 
-                              TintOpacity="0.6"
-                              FallbackColor="WhiteSmoke"/>
-                </Rectangle.Fill>
-            </Rectangle>
+            <Rectangle Name="shadowTarget" Grid.RowSpan="2" Fill="{ThemeResource AcrylicHost02}"/>
 
             <ListView Name="foldListView" Grid.Row="0" Grid.RowSpan="2" SelectionChanged="foldListView_SelectionChanged"
                   SelectionMode="Single" Background="Transparent">
