@@ -17,13 +17,16 @@ namespace Days
     public sealed partial class coverPage : Page
     {
         //public CBG Source;
-        public ObservableCollection<CoverEvents> CoverEventsCollection;
+        public ViewModels.CoverPageViewModel ViewModel { get; set; }
 
         public coverPage()
         {
             this.InitializeComponent();
+            this.DataContextChanged += (s, e) =>
+            {
+                ViewModel = DataContext as ViewModels.CoverPageViewModel;
+            };
             CoverEventsManager.ResetCoverEventsHeader(0);
-            CoverEventsCollection = CoverEventsManager.GetCoverEvents();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,7 +52,7 @@ namespace Days
             CoverEventsManager.AddCoverEvents(eventTitle, eventDate);
             CoverEventsManager.WriteCoverEventsCollectionData();
 
-            CoverEventsCollection = CoverEventsManager.GetCoverEvents();
+            ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
 
             if (Tile.tileStatus)
             {
@@ -87,6 +90,11 @@ namespace Days
         {
             this.Frame.Navigate(typeof(addPage));
             args.Handled = true;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+           ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
         }
     }
 }

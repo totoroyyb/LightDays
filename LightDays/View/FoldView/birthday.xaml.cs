@@ -15,21 +15,22 @@ namespace Days
     /// </summary>
     public sealed partial class birthday : Page
     {
-        public ObservableCollection<Events> eventList;
+        public ViewModels.EventsViewModel ViewModel { get; set; }
         public delegate void MyEventHandler(object source, EventArgs e);
         public static event MyEventHandler OnNavigateParentReady;
 
         public birthday()
         {
             this.InitializeComponent();
-            eventList = EventsManager.getBirthdayEvents();
-            eventList.CollectionChanged += EventList_CollectionChanged;
-            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
+            this.DataContextChanged += (s, e) =>
+            {
+                ViewModel = DataContext as ViewModels.EventsViewModel;
+            };
         }
 
         private void EventList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
+            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -89,12 +90,19 @@ namespace Days
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
-            eventList.CollectionChanged -= EventList_CollectionChanged;
+            ViewModel.EventList.CollectionChanged -= EventList_CollectionChanged;
 
             if (!MemoryCleaner.isLockDown)
             {
-                eventList = null;
+                ViewModel.EventList = null;
             }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ViewModel.EventList = EventsManager.getBirthdayEvents();
+            ViewModel.EventList.CollectionChanged += EventList_CollectionChanged;
+            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
         }
     }
 }

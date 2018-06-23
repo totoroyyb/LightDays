@@ -100,14 +100,17 @@
     <Compile Include="Helper\CheckContract.cs" />
     <Compile Include="Helper\CheckVisibility.cs" />
     <Compile Include="Model\UserSettings.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="ViewModels\CoverPageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="View\addPage.xaml.cs">
       <DependentUpon>addPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FoldView\basicEvent.xaml.cs">
-      <DependentUpon>basicEvent.xaml</DependentUpon>
+    <Compile Include="View\FoldView\EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FoldView\birthday.xaml.cs">
       <DependentUpon>birthday.xaml</DependentUpon>
@@ -319,7 +322,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FoldView\basicEvent.xaml">
+    <Page Include="View\FoldView\EventsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

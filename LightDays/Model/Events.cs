@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Storage;
+using Days.Constant;
 
 namespace Days.Model
 {
@@ -27,6 +24,51 @@ namespace Days.Model
         public static ObservableCollection<Events> studyEvents = new ObservableCollection<Events>();
         public static ObservableCollection<Events> workEvents = new ObservableCollection<Events>();
         public static ObservableCollection<Events> otherEvents = new ObservableCollection<Events>();
+
+        public static ObservableCollection<Events> GetEventsByFoldIndex(int index)
+        {
+            switch (index)
+            {
+                case FoldIndexConstants.basicEvent:
+                    addBasicEventsDays();
+                    return basicEvents;
+
+                case FoldIndexConstants.lifeEvent:
+                    addLifeEventsDays();
+                    return lifeEvents;
+
+                case FoldIndexConstants.loveEvent:
+                    addLoveEventsDays();
+                    return loveEvents;
+
+                case FoldIndexConstants.birthdayEvent:
+                    addBirthdayEventsDays();
+                    return birthdayEvents;
+
+                case FoldIndexConstants.festivalEvent:
+                    addFestivalEventsDays();
+                    return festivalEvents;
+
+                case FoldIndexConstants.entertainmentEvent:
+                    addEntertainmentEventsDays();
+                    return entertainmentEvents;
+
+                case FoldIndexConstants.studyEvent:
+                    addStudyEventsDays();
+                    return studyEvents;
+
+                case FoldIndexConstants.workEvent:
+                    addWorkEventsDays();
+                    return workEvents;
+
+                case FoldIndexConstants.otherEvent:
+                    addOtherEventsDays();
+                    return otherEvents;
+
+                default:
+                    return null;
+            }
+        }
 
         public static void RemoveOutDatedBasicEvents()
         {

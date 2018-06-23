@@ -6,15 +6,20 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Days.Model"
-    mc:Ignorable="d" Unloaded="Page_Unloaded">
+    xmlns:vm="using:Days.ViewModels"
+    mc:Ignorable="d" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
 
+    <Page.DataContext>
+        <vm:EventsViewModel/>
+    </Page.DataContext>
+    
     <Grid Background="{ThemeResource AcrylicHost03}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <ListView ItemsSource="{x:Bind eventList}" Grid.Row="0"
+        <ListView ItemsSource="{x:Bind ViewModel.EventList, Mode=OneWay}" Grid.Row="0"
                   Name="EventListView">
 
             <ListView.ItemContainerStyle>
@@ -37,22 +42,22 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="{x:Bind title}" Grid.Row="0" VerticalAlignment="Center"
+                        <TextBlock Text="{x:Bind title, Mode=OneWay}" Grid.Row="0" VerticalAlignment="Center"
                                Grid.Column="0" Margin="0,10,3,3" TextWrapping="Wrap"
                                FontSize="17"/>
-                        <TextBlock Text="{x:Bind date.Date.ToShortDateString()}" Grid.Row="1" VerticalAlignment="Center"
+                        <TextBlock Text="{x:Bind date.Date.ToShortDateString(), Mode=OneWay}" Grid.Row="1" VerticalAlignment="Center"
                                Grid.Column="0" Margin="0,0,3,10" TextWrapping="Wrap"
                                FontSize="16"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right"
                                  Grid.Row="0">
-                            <TextBlock Text="{x:Bind days.Days}" Margin="0,5,0,0"
+                            <TextBlock Text="{x:Bind days.Days, Mode=OneWay}" Margin="0,5,0,0"
                                FontSize="25" FontWeight="Bold" TextWrapping="Wrap"
                                VerticalAlignment="Center"/>
                             <TextBlock x:Uid="DaysBlock" VerticalAlignment="Center" Margin="2,10,2,2" HorizontalAlignment="Center"
                                    />
                         </StackPanel>
 
-                        <TextBlock Text="{x:Bind check}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        <TextBlock Text="{x:Bind check, Mode=OneWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top"
                                />
 
                     </Grid>

@@ -1,4 +1,5 @@
-﻿using Days.Helper;
+﻿using Days.Constant;
+using Days.Helper;
 using System.Numerics;
 using Windows.UI;
 using Windows.UI.Composition;
@@ -54,31 +55,31 @@ namespace Days
         {
             if (basicEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(basicEvent));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.basicEvent);
             } else if (lifeEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(life));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.lifeEvent);
             } else if (loveEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(love));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.loveEvent);
             } else if (birthdayEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(birthday));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.birthdayEvent);
             } else if (festivalEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(festival));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.festivalEvent);
             } else if (entertainmentEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(entertainment));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.entertainmentEvent);
             } else if (studyEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(study));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.studyEvent);
             } else if (workEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(work));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.workEvent);
             } else if (otherEvents.IsSelected)
             {
-                eventFrame.Navigate(typeof(others));
+                eventFrame.Navigate(typeof(EventsPage), FoldIndexConstants.otherEvent);
             }
         }
 

@@ -6,7 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Days.Model"
-    mc:Ignorable="d" ManipulationMode="Rotate" Unloaded="Page_Unloaded">
+    xmlns:vm="using:Days.ViewModels"
+    mc:Ignorable="d" ManipulationMode="Rotate" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+
+    <Page.DataContext>
+        <vm:CoverPageViewModel/>
+    </Page.DataContext>
 
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
@@ -87,10 +92,10 @@
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300" CornerRadius="10,10,10,10"
                   Background="{ThemeResource Acrylic03}">
                 
-                <Pivot ItemsSource="{x:Bind CoverEventsCollection}" Name="CoverEventsPivot" Margin="0,-2,0,0">
+                <Pivot ItemsSource="{x:Bind ViewModel.CoverEventsCollection, Mode=OneWay}" Name="CoverEventsPivot" Margin="0,-2,0,0">
                     <Pivot.HeaderTemplate>
                         <DataTemplate x:DataType="model:CoverEvents">
-                            <TextBlock Text="{x:Bind header}" FontSize="17" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Bind header, Mode=OneWay}" FontSize="17" FontWeight="Bold"/>
                         </DataTemplate>
                     </Pivot.HeaderTemplate>
 

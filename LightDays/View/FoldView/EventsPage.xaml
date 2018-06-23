@@ -1,12 +1,17 @@
 ﻿<Page
-    x:Class="Days.basicEvent"
+    x:Class="Days.EventsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Days"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Days.Model"
-    mc:Ignorable="d" Unloaded="Page_Unloaded">
+    xmlns:vm="using:Days.ViewModels"
+    mc:Ignorable="d" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+
+    <Page.DataContext>
+        <vm:EventsViewModel/>
+    </Page.DataContext>
 
     <Page.Resources>
         <ResourceDictionary>
@@ -22,7 +27,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <ListView ItemsSource="{x:Bind eventList}" Grid.Row="0" RightTapped="EventListView_RightTapped"
+        <ListView ItemsSource="{x:Bind ViewModel.EventList, Mode=OneWay}" Grid.Row="0" RightTapped="EventListView_RightTapped"
               Name="EventListView">
 
             <ListView.ItemContainerStyle>

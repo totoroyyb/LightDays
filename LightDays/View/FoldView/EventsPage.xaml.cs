@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Days.Helper;
+using Windows.UI.Xaml.Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -17,23 +18,25 @@ namespace Days
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class basicEvent : Page
+    public sealed partial class EventsPage : Page
     {
-        public ObservableCollection<Events> eventList;
+        public ViewModels.EventsViewModel ViewModel { get; set; }
         public delegate void MyEventHandler(object source, EventArgs e);
         public static event MyEventHandler OnNavigateParentReady;
+        private static int foldIndex { get; set; }
 
-        public basicEvent()
+        public EventsPage()
         {
             this.InitializeComponent();
-            eventList = EventsManager.getBasicEvents();
-            eventList.CollectionChanged += EventList_CollectionChanged;
-            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
+            this.DataContextChanged += (s, e) =>
+            {
+                ViewModel = DataContext as ViewModels.EventsViewModel;
+            };
         }
 
         private void EventList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            CheckVisibility.CheckButtonGridVisibility(eventList, ButtonGrid);
+            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -124,11 +127,28 @@ namespace Days
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
-            eventList.CollectionChanged -= EventList_CollectionChanged;
+            ViewModel.EventList.CollectionChanged -= EventList_CollectionChanged;
 
             if (!MemoryCleaner.isLockDown)
             {
-                eventList = null;
+                ViewModel.EventList = null;
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ViewModel.EventList = EventsManager.GetEventsByFoldIndex(foldIndex);
+            ViewModel.EventList.CollectionChanged += EventList_CollectionChanged;
+            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            object foldIndexObj = e.Parameter;
+            if (foldIndexObj != null)
+            {
+                foldIndex = (int)foldIndexObj;
             }
         }
     }

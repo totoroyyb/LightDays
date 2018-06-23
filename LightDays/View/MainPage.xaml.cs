@@ -35,7 +35,7 @@ namespace Days
 
         private void RegisterNaviToEditHandlers()
         {
-            basicEvent.OnNavigateParentReady += myControl_OnNavigateParentReady;
+            EventsPage.OnNavigateParentReady += myControl_OnNavigateParentReady;
             birthday.OnNavigateParentReady += myControl_OnNavigateParentReady;
             entertainment.OnNavigateParentReady += myControl_OnNavigateParentReady;
             festival.OnNavigateParentReady += myControl_OnNavigateParentReady;
@@ -171,7 +171,7 @@ namespace Days
 
         private void DeregisterNaviToEditHandlers()
         {
-            basicEvent.OnNavigateParentReady -= myControl_OnNavigateParentReady;
+            EventsPage.OnNavigateParentReady -= myControl_OnNavigateParentReady;
             birthday.OnNavigateParentReady -= myControl_OnNavigateParentReady;
             entertainment.OnNavigateParentReady -= myControl_OnNavigateParentReady;
             festival.OnNavigateParentReady -= myControl_OnNavigateParentReady;
