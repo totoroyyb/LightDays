@@ -58,9 +58,8 @@ namespace Days
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             DeleteFlyout.Hide();
-            int index = EventListView.SelectedIndex;
-            EventsManager.basicEvents.RemoveAt(index);
-            EventsManager.WriteBasicEventsData();
+            int eventIndex = EventListView.SelectedIndex;
+            EventsManager.RemoveEventByIndex(foldIndex, eventIndex);
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -84,11 +83,11 @@ namespace Days
             EditFlyout.Hide();
             int itemIndex = EventListView.SelectedIndex;
 
-            Events editedEvent = EventsManager.basicEvents[itemIndex];
+            Events editedEvent = EventsManager.GetSingleEventByIndex(foldIndex, itemIndex);
 
             EditedEvent.SetEditedEvent(editedEvent);
 
-            SelectedFold.selectedFoldIndex = FoldIndexConstants.basicEvent;
+            SelectedFold.selectedFoldIndex = foldIndex;
 
             SelectedEventIndex.selectedItemIndex = itemIndex;
 
@@ -116,7 +115,7 @@ namespace Days
                 Frame frame = new Frame();
                 frame.Navigate(typeof(SecondaryView), null);
                 Window.Current.Content = frame;
-                // You have to activate the window in order to show it later.
+                
                 Window.Current.Activate();
 
                 newViewId = ApplicationView.GetForCurrentView().Id;

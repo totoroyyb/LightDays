@@ -25,6 +25,104 @@ namespace Days.Model
         public static ObservableCollection<Events> workEvents = new ObservableCollection<Events>();
         public static ObservableCollection<Events> otherEvents = new ObservableCollection<Events>();
 
+        public static void RemoveEventByIndex(int foldIndex, int eventIndex)
+        {
+            switch (foldIndex)
+            {
+                case FoldIndexConstants.basicEvent:
+                    basicEvents.RemoveAt(eventIndex);
+                    WriteBasicEventsData();
+                    break;
+
+                case FoldIndexConstants.lifeEvent:
+                    lifeEvents.RemoveAt(eventIndex);
+                    WriteLifeEventsData();
+                    break;
+
+                case FoldIndexConstants.loveEvent:
+                    loveEvents.RemoveAt(eventIndex);
+                    WriteLoveEventsData();
+                    break;
+
+                case FoldIndexConstants.birthdayEvent:
+                    birthdayEvents.RemoveAt(eventIndex);
+                    WriteBirthdayEventsData();
+                    break;
+
+                case FoldIndexConstants.festivalEvent:
+                    festivalEvents.RemoveAt(eventIndex);
+                    WriteFestivalEventsData();
+                    break;
+
+                case FoldIndexConstants.entertainmentEvent:
+                    entertainmentEvents.RemoveAt(eventIndex);
+                    WriteEntertainmentEventsData();
+                    break;
+
+                case FoldIndexConstants.studyEvent:
+                    studyEvents.RemoveAt(eventIndex);
+                    WriteStudyEventsData();
+                    break;
+
+                case FoldIndexConstants.workEvent:
+                    workEvents.RemoveAt(eventIndex);
+                    WriteWorkEventsData();
+                    break;
+
+                case FoldIndexConstants.otherEvent:
+                    otherEvents.RemoveAt(eventIndex);
+                    WriteOtherEventsData();
+                    break;
+            }
+        }
+
+        public static Events GetSingleEventByIndex(int foldIndex, int eventIndex)
+        {
+            ObservableCollection<Events> events;
+            switch (foldIndex)
+            {
+                case FoldIndexConstants.basicEvent:
+                    events = basicEvents;
+                    break;
+
+                case FoldIndexConstants.lifeEvent:
+                    events = lifeEvents;
+                    break;
+
+                case FoldIndexConstants.loveEvent:
+                    events = loveEvents;
+                    break;
+
+                case FoldIndexConstants.birthdayEvent:
+                    events = birthdayEvents;
+                    break;
+
+                case FoldIndexConstants.festivalEvent:
+                    events = festivalEvents;
+                    break;
+
+                case FoldIndexConstants.entertainmentEvent:
+                    events = entertainmentEvents;
+                    break;
+
+                case FoldIndexConstants.studyEvent:
+                    events = studyEvents;
+                    break;
+
+                case FoldIndexConstants.workEvent:
+                    events = workEvents;
+                    break;
+
+                case FoldIndexConstants.otherEvent:
+                    events = otherEvents;
+                    break;
+
+                default:
+                    return null;
+            }
+            return events[eventIndex];
+        }
+
         public static ObservableCollection<Events> GetEventsByFoldIndex(int index)
         {
             switch (index)

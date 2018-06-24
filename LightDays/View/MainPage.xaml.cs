@@ -36,14 +36,6 @@ namespace Days
         private void RegisterNaviToEditHandlers()
         {
             EventsPage.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            birthday.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            entertainment.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            festival.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            life.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            love.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            others.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            study.OnNavigateParentReady += myControl_OnNavigateParentReady;
-            work.OnNavigateParentReady += myControl_OnNavigateParentReady;
         }
 
         private void myControl_OnNavigateParentReady(object source, EventArgs e)
@@ -172,14 +164,6 @@ namespace Days
         private void DeregisterNaviToEditHandlers()
         {
             EventsPage.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            birthday.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            entertainment.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            festival.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            life.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            love.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            others.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            study.OnNavigateParentReady -= myControl_OnNavigateParentReady;
-            work.OnNavigateParentReady -= myControl_OnNavigateParentReady;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Days
     /// </summary>
     public sealed partial class coverPage : Page
     {
-        //public CBG Source;
+
         public ViewModels.CoverPageViewModel ViewModel { get; set; }
 
         public coverPage()
@@ -94,7 +94,7 @@ namespace Days
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-           ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
+            ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
         }
     }
 }

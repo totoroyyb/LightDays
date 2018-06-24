@@ -112,9 +112,6 @@
     <Compile Include="View\FoldView\EventsPage.xaml.cs">
       <DependentUpon>EventsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FoldView\birthday.xaml.cs">
-      <DependentUpon>birthday.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PasswordView\checkPassword.xaml.cs">
       <DependentUpon>checkPassword.xaml</DependentUpon>
     </Compile>
@@ -125,20 +122,8 @@
     <Compile Include="View\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FoldView\entertainment.xaml.cs">
-      <DependentUpon>entertainment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FoldView\festival.xaml.cs">
-      <DependentUpon>festival.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\FoldView\foldPage.xaml.cs">
       <DependentUpon>foldPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FoldView\life.xaml.cs">
-      <DependentUpon>life.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FoldView\love.xaml.cs">
-      <DependentUpon>love.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -162,21 +147,12 @@
     <Compile Include="NewViewData.xaml.cs">
       <DependentUpon>NewViewData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FoldView\others.xaml.cs">
-      <DependentUpon>others.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecondaryView.xaml.cs">
       <DependentUpon>SecondaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\settingPage.xaml.cs">
       <DependentUpon>settingPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FoldView\study.xaml.cs">
-      <DependentUpon>study.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FoldView\work.xaml.cs">
-      <DependentUpon>work.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -326,10 +302,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FoldView\birthday.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\PasswordView\checkPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -342,23 +314,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FoldView\entertainment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FoldView\festival.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\FoldView\foldPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FoldView\life.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FoldView\love.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -370,23 +326,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FoldView\others.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="SecondaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\settingPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FoldView\study.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FoldView\work.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
