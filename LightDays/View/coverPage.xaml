@@ -7,11 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Days.Model"
     xmlns:vm="using:Days.ViewModels"
+    xmlns:converter="using:Days.Converter"
     mc:Ignorable="d" ManipulationMode="Rotate" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
 
     <Page.DataContext>
         <vm:CoverPageViewModel/>
     </Page.DataContext>
+
+    <Page.Resources>
+        <converter:CornerRadiusConverter x:Key="CornerRadiusConverter"/>
+    </Page.Resources>
 
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
@@ -89,7 +94,8 @@
                 </Button.Flyout>
             </Button>
 
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300" CornerRadius="10,10,10,10"
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300"
+                  CornerRadius="{x:Bind ViewModel.IsRounded, Mode=OneWay, Converter={StaticResource CornerRadiusConverter}}"
                   Background="{ThemeResource Acrylic03}">
                 
                 <Pivot ItemsSource="{x:Bind ViewModel.CoverEventsCollection, Mode=OneWay}" Name="CoverEventsPivot" Margin="0,-2,0,0">

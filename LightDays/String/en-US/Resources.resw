@@ -528,4 +528,7 @@
   <data name="LightRadioButton.Content" xml:space="preserve">
     <value>Light</value>
   </data>
+  <data name="RoundedCorner.Header" xml:space="preserve">
+    <value>Rounded Grid</value>
+  </data>
 </root>

@@ -528,4 +528,7 @@
   <data name="LightRadioButton.Content" xml:space="preserve">
     <value>亮主题</value>
   </data>
+  <data name="RoundedCorner.Header" xml:space="preserve">
+    <value>圆角边框</value>
+  </data>
 </root>

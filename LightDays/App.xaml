@@ -13,6 +13,10 @@
                 <ResourceDictionary Source="/Resource/DarkTheme.xaml" x:Key="Dark"/>
             </ResourceDictionary.ThemeDictionaries>
 
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/ExpanderHeaderStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
             <Style x:Key="AcrylicFlyout" TargetType="FlyoutPresenter">
                 <Setter Property="Background" Value="{ThemeResource Acrylic02}"/>
             </Style>
@@ -24,6 +28,14 @@
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="Margin" Value="0,5,0,5"/>
+                <Setter Property="HeaderStyle" Value="{StaticResource DefaultExpanderHeaderStyle}"/>
+            </Style>
+
+            <Style x:Key="ItemSperator" TargetType="Border">
+                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                <Setter Property="Margin" Value="5,0,5,2"/>
+                <Setter Property="MaxWidth" Value="160"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

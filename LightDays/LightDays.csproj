@@ -97,6 +97,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converter\CornerRadiusConverter.cs" />
     <Compile Include="Helper\CheckContract.cs" />
     <Compile Include="Helper\CheckVisibility.cs" />
     <Compile Include="Model\UserSettings.cs" />
@@ -287,6 +288,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Resource\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ExpanderHeaderStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

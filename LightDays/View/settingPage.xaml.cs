@@ -37,6 +37,7 @@ namespace Days
         private void Init()
         {
             InitThemeRadioButton();
+            RoundedCornerSwitch.IsOn = UserSettings.isRounded;
             coverTileToggle.IsOn = Tile.tileStatus;
             WHToggle.IsOn = Password.winHelloStatus;
             autoDelete.IsOn = AutoDelete.AutoDeleteStatus;
@@ -412,6 +413,22 @@ namespace Days
                     case "DefaultRadioButton":
                         UserSettings.SetElementTheme(ElementTheme.Default);
                         break;
+                }
+            }
+        }
+
+        private void RoundedCornerSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (checkInit)
+            {
+                ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+                if (toggleSwitch.IsOn)
+                {
+                    UserSettings.SetRoundedCorner(true);
+                }
+                else
+                {
+                    UserSettings.SetRoundedCorner(false);
                 }
             }
         }

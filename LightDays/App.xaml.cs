@@ -25,6 +25,7 @@ namespace Days
             this.Suspending += OnSuspending;
             RegisterNotificationChannelAsync();
             TryToRegisterBGT();
+            LoadUserSettings();
         }
 
         #region Init Register
@@ -80,7 +81,6 @@ namespace Days
                 BackgroundTaskRegistration task = builder.Register();
             }
         }
-
         #endregion
 
         #region Background Task
@@ -112,7 +112,6 @@ namespace Days
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            //ReadThemeData();
             ReadLangData();
             ReadCoverInfo();
             ReadAllEventsInfo();
@@ -153,6 +152,11 @@ namespace Days
                 
                 extendIntoTitleBar();
             }
+        }
+
+        private void LoadUserSettings()
+        {
+            UserSettings.LoadRoundedSettings();
         }
 
         private void ReadThemeData()

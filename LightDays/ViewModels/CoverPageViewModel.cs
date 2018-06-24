@@ -19,5 +19,17 @@ namespace Days.ViewModels
                 return _coverEventsCollection;
             }
         }
+
+        private bool _isRounded { get; set; }
+        public bool IsRounded
+        {
+            set
+            {
+                _isRounded = value;
+                OnPropertyChanged();
+            }
+
+            get { return _isRounded; }
+        }
     }
 }

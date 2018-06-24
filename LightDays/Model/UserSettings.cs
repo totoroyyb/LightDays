@@ -11,10 +11,14 @@ namespace Days.Model
     public class UserSettings
     {
         private const string ThemeSettingName = "ThemeSetting";
+        private const string RoundedCornerSettingName = "RoundedCornerSetting";
+
         public static ElementTheme Theme = ElementTheme.Default;
+        public static bool isRounded = true;
 
         private static Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
+        #region ThemeMethods
         public static void SetElementTheme(ElementTheme theme)
         {
             SaveThemeData((int)theme);
@@ -43,7 +47,27 @@ namespace Days.Model
         {
             WriteSettings(ThemeSettingName, index);
         }
+        #endregion
 
+        #region RoundedCornerMethod
+        public static void SetRoundedCorner(bool isOn)
+        {
+            SaveRoundedSettings(isOn);
+            isRounded = isOn;
+        }
+
+        public static void SaveRoundedSettings(bool isOn)
+        {
+            WriteSettings(RoundedCornerSettingName, isOn);
+        }
+
+        public static void LoadRoundedSettings()
+        {
+            isRounded = ReadSettingsBool(RoundedCornerSettingName);
+        }
+        #endregion
+
+        #region WriteAndReadSettingsMethod
         private static void WriteSettings(string settingName, string settingString)
         {
             localSettings.Values[settingName] = settingString;
@@ -73,6 +97,22 @@ namespace Days.Model
             }
             return -1;
         }
+
+        private static void WriteSettings(string settingName, bool settingBool)
+        {
+            localSettings.Values[settingName] = settingBool;
+        }
+
+        private static bool ReadSettingsBool(string settingName)
+        {
+            Object value = localSettings.Values[settingName];
+            if (value != null)
+            {
+                return (bool)value;
+            }
+            return true;
+        }
+        #endregion
 
 
     }

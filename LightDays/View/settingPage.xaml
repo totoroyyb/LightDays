@@ -173,11 +173,18 @@
                                                x:Uid="UIExpander"
                                                Style="{StaticResource DefaultExpanderStyle}">
                                 <StackPanel Margin="20,0,0,0">
-                                    <StackPanel Margin="0,5,0,0">
-                                        <TextBlock x:Uid="Theme" Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    <StackPanel Margin="0,5,0,5">
+                                        <TextBlock x:Uid="Theme"/>
                                         <RadioButton x:Name="LightRadioButton" x:Uid="LightRadioButton" Checked="ThemeRadioButton_Checked"/>
                                         <RadioButton x:Name="DarkRadioButton" x:Uid="DarkRadioButton" Checked="ThemeRadioButton_Checked"/>
                                         <RadioButton x:Name="DefaultRadioButton" x:Uid="DefaultRadioButton" Checked="ThemeRadioButton_Checked"/>
+                                    </StackPanel>
+
+                                    <Border Style="{StaticResource ItemSperator}"/>
+
+                                    <StackPanel Margin="0,5,0,0">
+                                        <ToggleSwitch x:Name="RoundedCornerSwitch" x:Uid="RoundedCorner" 
+                                                      Toggled="RoundedCornerSwitch_Toggled"/>
                                     </StackPanel>
                                 </StackPanel>
                             </controls:Expander>
@@ -193,11 +200,15 @@
                                         <ComboBoxItem Content="English"/>
                                     </ComboBox>
 
+                                    <Border Style="{StaticResource ItemSperator}"/>
+
                                     <ToggleSwitch x:Uid="CoverTileSwitchHeader" Toggled="ToggleSwitch_Toggled"
                                           Name="coverTileToggle" Margin="0,5,0,5"/>
 
+                                    <Border Style="{StaticResource ItemSperator}"/>
+
                                     <ToggleSwitch x:Uid="AutoDelSwitch" Toggled="autoDelete_Toggled"
-                                          Name="autoDelete"/>
+                                          Name="autoDelete" Margin="0,5,0,0"/>
                                 </StackPanel>
                             </controls:Expander>
                             

@@ -95,6 +95,7 @@ namespace Days
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
+            ViewModel.IsRounded = UserSettings.isRounded;
         }
     }
 }
