@@ -432,5 +432,10 @@ namespace Days
                 }
             }
         }
+
+        private void MottoSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

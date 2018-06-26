@@ -7,16 +7,9 @@ namespace Days.Helper
 {
     public class CheckVisibility
     {
-        public static void CheckButtonGridVisibility(ObservableCollection<Events> eventList, Grid ButtonGrid)
+        public static void CheckButtonGridVisibility(int eventsNum, Grid ButtonGrid)
         {
-            if (eventList != null && eventList.Count != 0)
-            {
-                ButtonGrid.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ButtonGrid.Visibility = Visibility.Collapsed;
-            }
+            ButtonGrid.Visibility = (eventsNum != 0) ? Visibility.Visible : Visibility.Collapsed;
         }
     }
 }

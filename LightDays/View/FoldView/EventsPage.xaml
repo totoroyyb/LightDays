@@ -67,7 +67,6 @@
 
                         <TextBlock Text="{x:Bind check, Mode=OneWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top"
                                Name="checkBlock"/>
-
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -119,5 +118,9 @@
                 </Button.Flyout>
             </Button>
         </Grid>
+
+        <TextBlock x:Uid="EmptyEventBlock" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontWeight="Light"
+                   Name="EmptyEventBlock"/>
     </Grid>
 </Page>

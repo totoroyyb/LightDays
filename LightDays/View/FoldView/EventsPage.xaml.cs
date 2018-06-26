@@ -36,7 +36,12 @@ namespace Days
 
         private void EventList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
+            if (ViewModel.EventList != null)
+            {
+                int eventsNum = ViewModel.EventList.Count;
+                CheckVisibility.CheckButtonGridVisibility(eventsNum, ButtonGrid);
+                EmptyEventBlock.Visibility = (eventsNum == 0) ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -138,7 +143,12 @@ namespace Days
         {
             ViewModel.EventList = EventsManager.GetEventsByFoldIndex(foldIndex);
             ViewModel.EventList.CollectionChanged += EventList_CollectionChanged;
-            CheckVisibility.CheckButtonGridVisibility(ViewModel.EventList, ButtonGrid);
+            if (ViewModel.EventList != null)
+            {
+                int eventsNum = ViewModel.EventList.Count;
+                CheckVisibility.CheckButtonGridVisibility(eventsNum, ButtonGrid);
+                EmptyEventBlock.Visibility = (eventsNum == 0) ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

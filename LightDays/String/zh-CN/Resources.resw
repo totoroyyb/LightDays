@@ -304,7 +304,7 @@
     <value>快捷键：Ctrl+L</value>
   </data>
   <data name="LogBlock.Text" xml:space="preserve">
-    <value>点击下面链接来查看相关更新日志</value>
+    <value>点击下面链接来查看以往相关更新日志</value>
   </data>
   <data name="LogHyper1.Content" xml:space="preserve">
     <value>版本 1.1.0 - 1.7.0 更新日志</value>
@@ -530,5 +530,14 @@
   </data>
   <data name="RoundedCorner.Header" xml:space="preserve">
     <value>圆角边框</value>
+  </data>
+  <data name="EmptyEventBlock.Text" xml:space="preserve">
+    <value>空空如也</value>
+  </data>
+  <data name="OpenSourceBlock.Text" xml:space="preserve">
+    <value>轻时光开源了！</value>
+  </data>
+  <data name="OpenSourceLink.Content" xml:space="preserve">
+    <value>点击前去GitHub查看</value>
   </data>
 </root>

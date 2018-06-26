@@ -295,7 +295,7 @@
     <value>HotKey: Ctrl+L</value>
   </data>
   <data name="LogBlock.Text" xml:space="preserve">
-    <value>Click links presented below to view the update log</value>
+    <value>Click links presented below to view previous update log</value>
   </data>
   <data name="LogHyper1.Content" xml:space="preserve">
     <value>Version 1.1.0 - 1.7.0 Update Log</value>
@@ -530,5 +530,14 @@
   </data>
   <data name="RoundedCorner.Header" xml:space="preserve">
     <value>Rounded Grid</value>
+  </data>
+  <data name="EmptyEventBlock.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="OpenSourceBlock.Text" xml:space="preserve">
+    <value>LightDays Embraced Open Source!</value>
+  </data>
+  <data name="OpenSourceLink.Content" xml:space="preserve">
+    <value>Click the link to navigate to GitHub.</value>
   </data>
 </root>
