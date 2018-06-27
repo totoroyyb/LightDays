@@ -19,10 +19,13 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>Days_StoreKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\yanyi\Desktop\APP\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\Quentin Yan\Desktop\LightDays\</AppxPackageDir>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <PackageCertificateThumbprint>9E8B56F4DDE0BCC458781F7292ADF9C448C37432</PackageCertificateThumbprint>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -97,12 +100,16 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\CornerRadiusConverter.cs" />
     <Compile Include="Helper\CheckContract.cs" />
     <Compile Include="Helper\CheckVisibility.cs" />
+    <Compile Include="Helper\UpdateInfoGrabber.cs" />
     <Compile Include="Model\UserSettings.cs" />
     <Compile Include="ViewModels\EventsViewModel.cs" />
     <Compile Include="ViewModels\CoverPageViewModel.cs" />
+    <Compile Include="ViewModels\FoldPageModelView.cs" />
+    <Compile Include="ViewModels\SettingPageViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="View\addPage.xaml.cs">
       <DependentUpon>addPage.xaml</DependentUpon>
@@ -273,6 +280,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="UpdateInfo\UpdateLog.txt" />
+    <Content Include="UpdateInfo\Update_en.txt" />
+    <Content Include="UpdateInfo\Update_zh.txt" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

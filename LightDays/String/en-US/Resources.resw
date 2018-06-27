@@ -540,4 +540,10 @@
   <data name="OpenSourceLink.Content" xml:space="preserve">
     <value>Click the link to navigate to GitHub.</value>
   </data>
+  <data name="NewUpdateHeader.Text" xml:space="preserve">
+    <value>New features or changes in this version</value>
+  </data>
+  <data name="MottoSwitch.Header" xml:space="preserve">
+    <value>Show motto after app launched</value>
+  </data>
 </root>

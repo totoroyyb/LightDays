@@ -540,4 +540,10 @@
   <data name="OpenSourceLink.Content" xml:space="preserve">
     <value>点击前去GitHub查看</value>
   </data>
+  <data name="NewUpdateHeader.Text" xml:space="preserve">
+    <value>本次更新的新增功能与更改</value>
+  </data>
+  <data name="MottoSwitch.Header" xml:space="preserve">
+    <value>应用内格言显示</value>
+  </data>
 </root>

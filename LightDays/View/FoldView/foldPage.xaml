@@ -5,14 +5,24 @@
     xmlns:local="using:Days"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Unloaded="Page_Unloaded">
+    xmlns:converter="using:Days.Converter"
+    xmlns:vm="using:Days.ViewModels"
+    mc:Ignorable="d" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+    </Page.Resources>
+
+    <Page.DataContext>
+        <vm:FoldPageModelView/>
+    </Page.DataContext>
 
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="880"/>
+                        <AdaptiveTrigger MinWindowWidth="820"/>
                     </VisualState.StateTriggers>
 
                     <VisualState.Setters>
@@ -43,7 +53,8 @@
                     </TransitionCollection>
                 </Frame.ContentTransitions>
 
-                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" 
+                      Visibility="{x:Bind viewModel.isMottoShown, Converter={StaticResource BoolToVisibility}, Mode=OneWay}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>

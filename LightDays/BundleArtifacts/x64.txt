@@ -1,0 +1,2 @@
+MainPackage=C:\Users\Quentin Yan\source\repos\LightDays\LightDays\bin\x64\Release\LightDays_1.9.0.0_x64.appx
+SymbolPackage=C:\Users\Quentin Yan\Desktop\LightDays\LightDays_1.9.0.0_Test\LightDays_1.9.0.0_x64.appxsym

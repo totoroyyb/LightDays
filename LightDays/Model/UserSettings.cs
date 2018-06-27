@@ -10,11 +10,13 @@ namespace Days.Model
 {
     public class UserSettings
     {
-        private const string ThemeSettingName = "ThemeSetting";
-        private const string RoundedCornerSettingName = "RoundedCornerSetting";
+        private static readonly string ThemeSettingName = "ThemeSetting";
+        private static readonly string RoundedCornerSettingName = "RoundedCornerSetting";
+        private static readonly string MottoSwitchSettingName = "MottoSwitchSetting";
 
         public static ElementTheme Theme = ElementTheme.Default;
         public static bool isRounded = true;
+        public static bool isMottoShown = true;
 
         private static Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
@@ -66,6 +68,25 @@ namespace Days.Model
             isRounded = ReadSettingsBool(RoundedCornerSettingName);
         }
         #endregion
+
+        #region
+        public static void SetMotto(bool isOn)
+        {
+            SaveMottoSettings(isOn);
+            isMottoShown = isOn;
+        }
+
+        public static void SaveMottoSettings(bool isOn)
+        {
+            WriteSettings(MottoSwitchSettingName, isOn);
+        }
+
+        public static void LoadMottoSettings()
+        {
+            isMottoShown = ReadSettingsBool(MottoSwitchSettingName);
+        }
+        #endregion
+
 
         #region WriteAndReadSettingsMethod
         private static void WriteSettings(string settingName, string settingString)

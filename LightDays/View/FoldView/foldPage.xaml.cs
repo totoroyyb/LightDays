@@ -1,9 +1,9 @@
 ﻿using Days.Constant;
 using Days.Helper;
+using Days.Model;
 using System.Numerics;
 using Windows.UI;
 using Windows.UI.Composition;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
@@ -18,10 +18,33 @@ namespace Days
     /// </summary>
     public sealed partial class foldPage : Page
     {
+        private ViewModels.FoldPageModelView viewModel { get; set; }
+
         public foldPage()
         {
             this.InitializeComponent();
+            this.DataContextChanged += (s, e) =>
+            {
+                viewModel = DataContext as ViewModels.FoldPageModelView;
+            };
+            Init();
+            
+        }
+
+        private void Init()
+        {
+            RegisterHandler();
             InitializeDropShadow(shadowHost, shadowTarget);
+        }
+        
+        private void RegisterHandler()
+        {
+            settingPage.OnChangeMottoVisibility += SettingPage_OnChangeMottoVisibility;
+        }
+
+        private void SettingPage_OnChangeMottoVisibility(object source, System.EventArgs e)
+        {
+            viewModel.isMottoShown = UserSettings.isMottoShown;
         }
 
         private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
@@ -85,10 +108,16 @@ namespace Days
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
+            settingPage.OnChangeMottoVisibility -= SettingPage_OnChangeMottoVisibility;
             if (!MemoryCleaner.isLockDown)
             {
                 MemoryCleaner.FreeUpMemory();
             }            
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            viewModel.isMottoShown = UserSettings.isMottoShown;
         }
     }
 }

@@ -24,12 +24,17 @@ namespace Days
         public delegate void MyEventHandler(object source, EventArgs e);
         public static event MyEventHandler OnNavigateParentReady;
         public static event MyEventHandler SetCBGImageReady;
-        public ObservableCollection<CoverEvents> CoverEventsCollection;
+        public static event MyEventHandler OnChangeMottoVisibility;
+        private ViewModels.SettingPageViewModel ViewModel { get; set; }
 
         public settingPage()
         {
             checkInit = false;
             this.InitializeComponent();
+            this.DataContextChanged += (s, e) =>
+            {
+                ViewModel = DataContext as ViewModels.SettingPageViewModel;
+            };
             Init();
             checkInit = true;
         }
@@ -38,12 +43,12 @@ namespace Days
         {
             InitThemeRadioButton();
             RoundedCornerSwitch.IsOn = UserSettings.isRounded;
+            MottoSwitch.IsOn = UserSettings.isMottoShown;
             coverTileToggle.IsOn = Tile.tileStatus;
             WHToggle.IsOn = Password.winHelloStatus;
             autoDelete.IsOn = AutoDelete.AutoDeleteStatus;
             selectLang.SelectedIndex = Translation.LangIndex;
             SetLockButtonState();
-            CoverEventsCollection = CoverEventsManager.GetCoverEvents();
             EditTileBGButton.IsEnabled = false;
         }
 
@@ -435,7 +440,25 @@ namespace Days
 
         private void MottoSwitch_Toggled(object sender, RoutedEventArgs e)
         {
+            if (checkInit)
+            {
+                ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+                if (toggleSwitch.IsOn)
+                {
+                    UserSettings.SetMotto(true);
+                }
+                else
+                {
+                    UserSettings.SetMotto(false);
+                }
+                OnChangeMottoVisibility(this, null);
+            }
+        }
 
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ViewModel.UpdateInfoText = await UpdateInfoGrabber.GrabUpdateInfoByLang();
+            ViewModel.CoverEventsCollection = CoverEventsManager.GetCoverEvents();
         }
     }
 }

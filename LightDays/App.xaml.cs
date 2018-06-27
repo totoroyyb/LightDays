@@ -157,6 +157,7 @@ namespace Days
         private void LoadUserSettings()
         {
             UserSettings.LoadRoundedSettings();
+            UserSettings.LoadMottoSettings();
         }
 
         private void ReadThemeData()

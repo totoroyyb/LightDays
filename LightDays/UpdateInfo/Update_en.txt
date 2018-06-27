@@ -1,0 +1,16 @@
+﻿2018/6/27 Version: 1.9.0
+Updated LightDays embraced open source community now! Find the link in "About" tag.
+Updated Add support for 1803.
+Updated Merge the title bar into main app windows!
+Updated Add support for Light and Dark theme.
+Updated Main grid in cover page can be round corner! Changing it in settings.
+Updated Add hint when the event list is empty.
+Updated Catagorized setting page.
+Updated Add button for closing motto.
+Updated [Experimental]Add support for open events in new window by right click related event. It's still rudimentary.
+Improved Adjust acrylic opacity and increase readability.
+Improved Modified memory usage.
+Improved Improve the speed of editing events.
+Improved Improve app launch time.
+Improved More code modifications and detail changes in UI
+Fixed Fixed a issue that tiles show English but setting is Chinese.
