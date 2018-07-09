@@ -1,4 +1,7 @@
-﻿2018/6/27 Version: 1.9.0
+﻿2018/07/09 Version: 1.9.1
+Fixed Fix a bug that cause app crash when toggle on "Auto delete outdated events"
+
+2018/6/27 Version: 1.9.0
 Updated LightDays embraced open source community now! Find the link in "About" tag.
 Updated Add support for 1803.
 Updated Merge the title bar into main app windows!

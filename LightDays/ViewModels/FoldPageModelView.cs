@@ -8,14 +8,13 @@ namespace Days.ViewModels
 {
     public class FoldPageModelView : ViewModelBase
     {
-        private bool _isMottoShown { get; set; }
+        private bool _isMottoShown;
         public bool isMottoShown
         {
             get { return _isMottoShown; }
             set
             {
-                _isMottoShown = value;
-                OnPropertyChanged();
+                SetProperty(ref _isMottoShown, value);
             }
         }
     }

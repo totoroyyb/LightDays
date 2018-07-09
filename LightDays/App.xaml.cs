@@ -119,7 +119,7 @@ namespace Days
 
             Frame rootFrame = Window.Current.Content as Frame;
 
-            
+
             if (rootFrame == null)
             {
                 rootFrame = new Frame();
@@ -149,7 +149,7 @@ namespace Days
                 }
 
                 Window.Current.Activate();
-                
+
                 extendIntoTitleBar();
             }
         }
@@ -208,26 +208,23 @@ namespace Days
             ReadCoverSource();
         }
 
-        private async void ReadAllEventsInfo()
+        private void ReadAllEventsInfo()
         {
-            await Task.Run(() =>
-            {
-                ReadBasicEventsData();
-                ReadLifeEventsData();
-                ReadBirthdayEventsData();
-                ReadLoveEventsData();
-                ReadFestivalEventsData();
-                ReadEntertainmentEventsData();
-                ReadStudyEventsData();
-                ReadWorkEventsData();
-                ReadOtherEventsData();
+            ReadBasicEventsData();
+            ReadLifeEventsData();
+            ReadBirthdayEventsData();
+            ReadLoveEventsData();
+            ReadFestivalEventsData();
+            ReadEntertainmentEventsData();
+            ReadStudyEventsData();
+            ReadWorkEventsData();
+            ReadOtherEventsData();
 
-                if (AutoDelete.AutoDeleteStatus)
-                {
-                    AutoDelete.DeleteOutDatedAllEvents();
-                    AutoDelete.DeleteOutDatedCoverEvents();
-                }
-            });
+            if (AutoDelete.AutoDeleteStatus)
+            {
+                AutoDelete.DeleteOutDatedAllEvents();
+                AutoDelete.DeleteOutDatedCoverEvents();
+            }
         }
 
         #region ReadCoverEvents
