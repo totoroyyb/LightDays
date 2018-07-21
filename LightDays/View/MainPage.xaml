@@ -5,6 +5,9 @@
     xmlns:local="using:Days"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:animation="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    xmlns:aniex="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:control="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
 
     <Grid>
@@ -16,18 +19,14 @@
                     </VisualState.StateTriggers>
 
                     <VisualState.Setters>
-                        <Setter Target="coverFrame.(Grid.ColumnSpan)" Value="1"/>
-                        <Setter Target="coverFrame.(Grid.RowSpan)" Value="2"/>
-                        <Setter Target="shadowHost.(Grid.ColumnSpan)" Value="1"/>
-                        <Setter Target="shadowHost.(Grid.RowSpan)" Value="2"/>
-                        <Setter Target="shadowTarget.(Grid.ColumnSpan)" Value="1"/>
-                        <Setter Target="shadowTarget.(Grid.RowSpan)" Value="2"/>
-                        <Setter Target="CBGImage.(Grid.ColumnSpan)" Value="1"/>
-                        <Setter Target="CBGImage.(Grid.RowSpan)" Value="2"/>
-                        <Setter Target="foldFrame.(Grid.ColumnSpan)" Value="1"/>
-                        <Setter Target="foldFrame.(Grid.Column)" Value="1"/>
-                        <Setter Target="foldFrame.(Grid.Row)" Value="0"/>
-                        <Setter Target="foldFrame.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="CoverGrid.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="CoverGrid.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="CBGImageBorder.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="CBGImageBorder.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="FoldViewGrid.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="FoldViewGrid.(Grid.Column)" Value="1"/>
+                        <Setter Target="FoldViewGrid.(Grid.Row)" Value="0"/>
+                        <Setter Target="FoldViewGrid.(Grid.RowSpan)" Value="2"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -49,33 +48,46 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-               Name="foldFrame">
-                <Frame.ContentTransitions>
-                    <TransitionCollection>
-                        <NavigationThemeTransition/>
-                    </TransitionCollection>
-                </Frame.ContentTransitions>
-            </Frame>
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    aniex:VisualExtensions.CenterPoint="50,50,0"
+                    Name="CBGImageBorder">
+                <Image Stretch="UniformToFill" Name="CBGImage"/>
+                <animation:Implicit.Animations>
+                    <animation:ScaleAnimation Duration="0:0:0.8"/>
+                </animation:Implicit.Animations>
+            </Border>
 
-            <Canvas Name="shadowHost" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Canvas>
-            <Rectangle Name="shadowTarget" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="White"/>
-                </Rectangle.Fill>
-            </Rectangle>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                      Name="CoverGrid">
 
-            <Image Stretch="UniformToFill" Name="CBGImage"
-                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Frame x:Name="coverFrame" PointerEntered="coverFrame_PointerEntered" PointerExited="coverFrame_PointerExited">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition/>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+            </Grid>
 
-            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-               x:Name="coverFrame">
-                <Frame.ContentTransitions>
-                    <TransitionCollection>
-                        <NavigationThemeTransition/>
-                    </TransitionCollection>
-                </Frame.ContentTransitions>
-            </Frame>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                  Name="FoldViewGrid">
+                <Canvas Name="shadowHost"/>
+                <Rectangle Name="shadowTarget">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="White"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <Frame Name="foldFrame"
+                       PointerEntered="foldFrame_PointerEntered"
+                       PointerExited="foldFrame_PointerExited">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition/>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

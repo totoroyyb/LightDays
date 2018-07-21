@@ -19,6 +19,9 @@ namespace Days
     public sealed partial class foldPage : Page
     {
         private ViewModels.FoldPageModelView viewModel { get; set; }
+        private static ScalarKeyFrameAnimation blurIncreaseAnimation;
+        private static ScalarKeyFrameAnimation blurDecreaseAnimation;
+        private static DropShadow dropShadow;
 
         public foldPage()
         {
@@ -36,7 +39,7 @@ namespace Days
             RegisterHandler();
             InitializeDropShadow(shadowHost, shadowTarget);
         }
-        
+
         private void RegisterHandler()
         {
             settingPage.OnChangeMottoVisibility += SettingPage_OnChangeMottoVisibility;
@@ -53,12 +56,16 @@ namespace Days
             Compositor compositor = hostVisual.Compositor;
 
             // Create a drop shadow
-            var dropShadow = compositor.CreateDropShadow();
-            dropShadow.Color = Color.FromArgb(255, 75, 75, 80);
-            dropShadow.BlurRadius = 25;
-            dropShadow.Offset = new Vector3(1.0f, 1.0f, 0.0f);
+            dropShadow = compositor.CreateDropShadow();
+            //dropShadow.Color = Color.FromArgb(255, 75, 75, 80);
+            dropShadow.Color = Colors.Black;
+            dropShadow.BlurRadius = 10;
+            dropShadow.Offset = new Vector3(0, 0, 0);
+
             // Associate the shape of the shadow with the shape of the target element
             dropShadow.Mask = shadowTarget.GetAlphaMask();
+
+            CreateAnimation(compositor);
 
             // Create a Visual to hold the shadow
             var shadowVisual = compositor.CreateSpriteVisual();
@@ -72,6 +79,12 @@ namespace Days
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
 
             shadowVisual.StartAnimation("Size", bindSizeAnimation);
+        }
+
+        private void CreateAnimation(Compositor compositor)
+        {
+            blurIncreaseAnimation = Animation.CreateBlurIncreaseAnimation(compositor);
+            blurDecreaseAnimation = Animation.CreateBlurDecreaseAnimation(compositor);
         }
 
         private void foldListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -118,6 +131,16 @@ namespace Days
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             viewModel.isMottoShown = UserSettings.isMottoShown;
+        }
+
+        private void foldListView_PointerEntered(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            dropShadow.StartAnimation("BlurRadius", blurIncreaseAnimation);
+        }
+
+        private void foldListView_PointerExited(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            dropShadow.StartAnimation("BlurRadius", blurDecreaseAnimation);
         }
     }
 }

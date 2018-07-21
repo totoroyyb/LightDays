@@ -2,7 +2,6 @@
     x:Class="Days.coverPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Days"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Days.Model"
@@ -96,8 +95,9 @@
 
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="600" MaxWidth="300"
                   CornerRadius="{x:Bind ViewModel.IsRounded, Mode=OneWay, Converter={StaticResource CornerRadiusConverter}}"
-                  Background="{ThemeResource Acrylic03}">
-                
+                  Background="{ThemeResource Acrylic03}"
+                  Name="CoverEventsView">
+
                 <Pivot ItemsSource="{x:Bind ViewModel.CoverEventsCollection, Mode=OneWay}" Name="CoverEventsPivot" Margin="0,-2,0,0">
                     <Pivot.HeaderTemplate>
                         <DataTemplate x:DataType="model:CoverEvents">

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-using Windows.Graphics.Imaging;
 using Windows.UI.Xaml.Media.Imaging;
 using System.IO;
 
@@ -22,7 +17,7 @@ namespace Days.Model
         
         public static async void SetCustomizedCBG()
         {
-            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            var picker = new FileOpenPicker();
             FileOpenPicker fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileOpenPicker.FileTypeFilter.Add(".jpg");
@@ -38,7 +33,7 @@ namespace Days.Model
             else
             {
                 var bitmapImage = new BitmapImage();
-                using (var stream = await inputFile.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                using (var stream = await inputFile.OpenAsync(FileAccessMode.Read))
                 {
                     await bitmapImage.SetSourceAsync(stream);
                 }

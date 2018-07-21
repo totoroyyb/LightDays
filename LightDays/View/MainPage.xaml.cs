@@ -23,6 +23,9 @@ namespace Days
     public sealed partial class MainPage : Page
     {
         public CBG Source;
+        private static ScalarKeyFrameAnimation blurIncreaseAnimation;
+        private static ScalarKeyFrameAnimation blurDecreaseAnimation;
+        private static DropShadow dropShadow;
 
         public MainPage()
         {
@@ -68,12 +71,15 @@ namespace Days
             Compositor compositor = hostVisual.Compositor;
 
             // Create a drop shadow
-            var dropShadow = compositor.CreateDropShadow();
-            dropShadow.Color = Color.FromArgb(255, 75, 75, 80);
-            dropShadow.BlurRadius = 25;
-            dropShadow.Offset = new Vector3(1.0f, 1.0f, 0.0f);
+            dropShadow = compositor.CreateDropShadow();
+            //dropShadow.Color = Color.FromArgb(255, 75, 75, 80);
+            dropShadow.Color = Colors.Black;
+            dropShadow.BlurRadius = 10;
+            dropShadow.Offset = new Vector3(0, 0, 0);
             // Associate the shape of the shadow with the shape of the target element
             dropShadow.Mask = shadowTarget.GetAlphaMask();
+
+            CreateAnimation(compositor);
 
             // Create a Visual to hold the shadow
             var shadowVisual = compositor.CreateSpriteVisual();
@@ -89,6 +95,11 @@ namespace Days
             shadowVisual.StartAnimation("Size", bindSizeAnimation);
         }
 
+        private void CreateAnimation(Compositor compositor)
+        {
+            blurIncreaseAnimation = Animation.CreateBlurIncreaseAnimation(compositor);
+            blurDecreaseAnimation = Animation.CreateBlurDecreaseAnimation(compositor);
+        }
 
         private void ToLockScreen(object source, EventArgs e)
         {
@@ -144,7 +155,7 @@ namespace Days
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             DeregisterEventHandlers();
-            //ClearKeyboardAccelerator();
+            ClearKeyboardAccelerator();
             MemoryCleaner.FreeUpMemory();
         }
 
@@ -164,6 +175,28 @@ namespace Days
         private void DeregisterNaviToEditHandlers()
         {
             EventsPage.OnNavigateParentReady -= myControl_OnNavigateParentReady;
+        }
+
+        private void coverFrame_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            var CBGVisual = ElementCompositionPreview.GetElementVisual(CBGImageBorder);
+            CBGVisual.Scale = new Vector3(1.06f, 1.06f, 0);
+        }
+
+        private void coverFrame_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            var CBGVisual = ElementCompositionPreview.GetElementVisual(CBGImageBorder);
+            CBGVisual.Scale = new Vector3(1f, 1f, 0);
+        }
+
+        private void foldFrame_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            dropShadow.StartAnimation("BlurRadius", blurIncreaseAnimation);
+        }
+
+        private void foldFrame_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            dropShadow.StartAnimation("BlurRadius", blurDecreaseAnimation);
         }
     }
 }
