@@ -1,4 +1,7 @@
-﻿2018/07/21 Version: 1.9.2
+﻿2018/07/27 Version: 1.9.3
+Improved Reduced the animation duration
+
+2018/07/21 Version: 1.9.2
 Added Depth
 Added Animation when pointer entered into Cover Events Page or Fold View
 

@@ -1,1 +1,1 @@
-C:\Users\Quentin Yan\source\repos\LightDays\LightDays\bin\ARM\Release\Upload\LightDays_1.9.2.0\LightDays_1.9.2.0_x86_x64_arm.appxbundle
+C:\Users\Quentin Yan\source\repos\LightDays\LightDays\bin\ARM\Release\Upload\LightDays_1.9.3.0\LightDays_1.9.3.0_x86_x64_arm.appxbundle
