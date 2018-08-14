@@ -4,6 +4,7 @@ using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Days.Model
 {
@@ -62,7 +63,7 @@ namespace Days.Model
             localSettings.Values["CustomizedCBGStatus"] = status;
         }
 
-        public static async void ReadCustomizedCBG()
+        public static async Task ReadCustomizedCBG()
         {
             try
             {

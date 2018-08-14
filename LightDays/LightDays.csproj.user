@@ -4,7 +4,7 @@
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
-    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+    <PackageOptionalProjectsInIdeBuilds>True</PackageOptionalProjectsInIdeBuilds>
     <Source>C:\Users\yanyi\OneDrive\Project\LightDays\LightDaysIcon.png</Source>
     <SmallTileSource>C:\Users\yanyi\OneDrive\Project\LightDays\LightDaysIcon.png</SmallTileSource>
     <MediumTileSource>C:\Users\yanyi\OneDrive\Project\LightDays\LightDaysIcon.png</MediumTileSource>

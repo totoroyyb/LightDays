@@ -110,10 +110,10 @@ namespace Days
         }
         #endregion
 
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
             ReadLangData();
-            ReadCoverInfo();
+            await ReadCoverInfo();
             ReadAllEventsInfo();
             Password.ReadWinHelloData();
 
@@ -201,11 +201,11 @@ namespace Days
             }
         }
 
-        private void ReadCoverInfo()
+        private async Task ReadCoverInfo()
         {
             ReadAutoDeleteData();
             ReadCoverEventsData();
-            ReadCoverSource();
+            await ReadCoverSource();
         }
 
         private void ReadAllEventsInfo()
@@ -239,7 +239,7 @@ namespace Days
             }
         }
 
-        private void ReadCoverSource()
+        private async Task ReadCoverSource()
         {
             Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             Object coverSource = localSettings.Values["coverSource"];
@@ -257,7 +257,7 @@ namespace Days
 
             if (CustomizedCBG.CustomizedCBGStatus)
             {
-                CustomizedCBG.ReadCustomizedCBG();
+                await CustomizedCBG.ReadCustomizedCBG();
             }
         }
 

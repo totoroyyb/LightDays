@@ -19,7 +19,7 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>Days_StoreKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\Quentin Yan\Desktop\LightDays\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\yanyi\Desktop\LightDays\</AppxPackageDir>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <PackageCertificateThumbprint>9E8B56F4DDE0BCC458781F7292ADF9C448C37432</PackageCertificateThumbprint>
