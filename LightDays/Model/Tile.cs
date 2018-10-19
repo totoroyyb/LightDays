@@ -98,13 +98,21 @@ namespace Days.Model
 <tile>
     <visual branding='nameAndLogo'>
 
-        <binding template='TileMedium' displayName='{eventDate}'>
+        <binding template='TileMedium' displayName='{eventDate}'
+                 hint-lockDetailedStatus1='Meeting with Thomas'
+                 hint-lockDetailedStatus2='11:00 AM - 12:30 PM'
+                 hint-lockDetailedStatus3='Studio F'>
+ 
             <image src='{imageUrl}' placement='background' hint-overlay='30'/>
             <text hint-style='title' hint-align='center'>{eventDays}</text> 
             <text hint-style='caption' hint-wrap='true' hint-align='center' hint-maxLines='2'>{eventTitle}</text>
         </binding>
 
-        <binding template='TileWide' displayName='{eventDate}'>
+        <binding template='TileWide' displayName='{eventDate}'
+                 hint-lockDetailedStatus1='Meeting with Thomas'
+                 hint-lockDetailedStatus2='11:00 AM - 12:30 PM'
+                 hint-lockDetailedStatus3='Studio F'>
+
             <image src='{imageUrl}' placement='background' hint-overlay='30'/>
             <group>
                 <subgroup hint-weight='5'>

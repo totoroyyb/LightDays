@@ -32,6 +32,9 @@
           <uap:Rotation Preference="landscapeFlipped" />
         </uap:InitialRotationPreference>
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.lockScreenCall" />
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
